@@ -1,0 +1,1070 @@
+{
+  'items': {
+    'promoted': [],
+    'regular': [
+      {
+        'id': '7628198692',
+        'name': 'Mocowanie kamerki internetowej Philips SPC500NC',
+        'seller': {
+          'id': '38389116',
+          'company': False,
+          'superSeller': False
+        },
+        'promotion': {
+          'emphasized': False,
+          'bold': False,
+          'highlight': False
+        },
+        'delivery': {
+          'availableForFree': False,
+          'lowestPrice': {
+            'amount': '3.75',
+            'currency': 'PLN'
+          }
+        },
+        'images': [
+          {
+            'url': 'https://d.allegroimg.com/original/01a10b/c1c71ad24d61b5ac4f3424084f6d'
+          }
+        ],
+        'sellingMode': {
+          'format': 'BUY_NOW',
+          'price': {
+            'amount': '1.00',
+            'currency': 'PLN'
+          },
+          'popularity': 0
+        },
+        'stock': {
+          'unit': 'UNIT',
+          'available': 1
+        },
+        'category': {
+          'id': '260021'
+        },
+        'publication': {
+          'endingAt': '2019-04-21T07:46:39.000Z'
+        }
+      },
+      {
+        'id': '7956871529',
+        'name': 'kamera PC wideorejestrator samochodowy TRACER',
+        'seller': {
+          'id': '9308383',
+          'company': False,
+          'superSeller': False
+        },
+        'promotion': {
+          'emphasized': False,
+          'bold': False,
+          'highlight': False
+        },
+        'delivery': {
+          'availableForFree': False,
+          'lowestPrice': {
+            'amount': '13.00',
+            'currency': 'PLN'
+          }
+        },
+        'images': [
+          {
+            'url': 'https://a.allegroimg.com/original/039611/f414366b4a62bddb8e3c10d03d3f'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/037ca3/f4c5edcc4260a6008701de171614'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/039137/b6a0997c4ba5bffbbde584611e90'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/035685/c38ea7d440a48597f5b19d236ce9'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/03e3ce/848122f04b1487cc63f1c4588583'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/03c61c/cff4bdae4eac9f1c73c218958402'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/03791e/772eb1fb46e280c87d91fdcd75fb'
+          }
+        ],
+        'sellingMode': {
+          'format': 'AUCTION',
+          'price': {
+            'amount': '2.77',
+            'currency': 'PLN'
+          },
+          'bidCount': 2
+        },
+        'stock': {
+          'unit': 'SET',
+          'available': 1
+        },
+        'category': {
+          'id': '260021'
+        },
+        'publication': {
+          'endingAt': '2019-04-14T19:03:00.000Z'
+        }
+      },
+      {
+        'id': '7978451257',
+        'name': 'Kamera internetowa Logitech C110',
+        'seller': {
+          'id': '2418366',
+          'company': False,
+          'superSeller': False
+        },
+        'promotion': {
+          'emphasized': False,
+          'bold': False,
+          'highlight': False
+        },
+        'delivery': {
+          'availableForFree': False,
+          'lowestPrice': {
+            'amount': '8.99',
+            'currency': 'PLN'
+          }
+        },
+        'images': [
+          {
+            'url': 'https://a.allegroimg.com/original/035e64/d4ffc3914f33b5cf96718eeeefe1'
+          }
+        ],
+        'sellingMode': {
+          'format': 'AUCTION',
+          'price': {
+            'amount': '1.00',
+            'currency': 'PLN'
+          },
+          'bidCount': 0
+        },
+        'stock': {
+          'unit': 'UNIT',
+          'available': 1
+        },
+        'category': {
+          'id': '260021'
+        },
+        'publication': {
+          'endingAt': '2019-04-18T10:43:33.000Z'
+        }
+      },
+      {
+        'id': '7973270814',
+        'name': 'Logitech kamera c350',
+        'seller': {
+          'id': '1562037',
+          'company': False,
+          'superSeller': False
+        },
+        'promotion': {
+          'emphasized': False,
+          'bold': False,
+          'highlight': False
+        },
+        'delivery': {
+          'availableForFree': False,
+          'lowestPrice': {
+            'amount': '20.00',
+            'currency': 'PLN'
+          }
+        },
+        'images': [
+          {
+            'url': 'https://a.allegroimg.com/original/01ddd6/0ff227fb4f10859d6fa3e8064550'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/019db2/a5d1712145d9a8bf21e20e5c2d9b'
+          }
+        ],
+        'sellingMode': {
+          'format': 'AUCTION',
+          'price': {
+            'amount': '1.00',
+            'currency': 'PLN'
+          },
+          'bidCount': 0
+        },
+        'stock': {
+          'unit': 'UNIT',
+          'available': 1
+        },
+        'category': {
+          'id': '260021'
+        },
+        'publication': {
+          'endingAt': '2019-04-16T18:15:26.000Z'
+        }
+      },
+      {
+        'id': '7983043141',
+        'name': 'KAMERKA LIFECAM PUD',
+        'seller': {
+          'id': '39734065',
+          'company': True,
+          'superSeller': False
+        },
+        'promotion': {
+          'emphasized': False,
+          'bold': False,
+          'highlight': False
+        },
+        'delivery': {
+          'availableForFree': False,
+          'lowestPrice': {
+            'amount': '19.00',
+            'currency': 'PLN'
+          }
+        },
+        'images': [
+          {
+            'url': 'https://a.allegroimg.com/original/01752e/0a5af0214b668329d80c40b91ac5'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/01632c/8e45d5ed46f982b92df9b8cf3398'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/017109/ec81357146f881fb631733167211'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/01a54a/5f74856e48b4a0e1fbd1a801f711'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/019b54/b88e18224605bbd66350068e3614'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/019284/5531f5544b31b2c250703b6d5cba'
+          }
+        ],
+        'sellingMode': {
+          'format': 'BUY_NOW',
+          'price': {
+            'amount': '1.00',
+            'currency': 'PLN'
+          },
+          'fixedPrice': {
+            'amount': '120.00',
+            'currency': 'PLN'
+          },
+          'bidCount': 0
+        },
+        'stock': {
+          'unit': 'UNIT',
+          'available': 1
+        },
+        'category': {
+          'id': '260021'
+        },
+        'publication': {
+          'endingAt': '2019-04-19T17:10:51.000Z'
+        }
+      },
+      {
+        'id': '7971724589',
+        'name': 'KAMERKA INTERNETOWA LABTEC',
+        'seller': {
+          'id': '44513452',
+          'company': True,
+          'superSeller': False
+        },
+        'promotion': {
+          'emphasized': False,
+          'bold': False,
+          'highlight': False
+        },
+        'delivery': {
+          'availableForFree': False,
+          'lowestPrice': {
+            'amount': '8.00',
+            'currency': 'PLN'
+          }
+        },
+        'images': [
+          {
+            'url': 'https://a.allegroimg.com/original/01c483/b4ae449c4feb93344c2c4b299748'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/014e3b/4957c4f54081ac667461e475e901'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/013f5f/139975104abc888a55a11bb4dff4'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/01b1dd/3640abb3436083d33b504cf3b0bf'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/0103ce/7fdf8e1a486f96dc1694ea5c76d5'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/0180bc/60e6a17d49a095f5232169a58296'
+          }
+        ],
+        'sellingMode': {
+          'format': 'BUY_NOW',
+          'price': {
+            'amount': '3.00',
+            'currency': 'PLN'
+          },
+          'popularity': 0
+        },
+        'stock': {
+          'unit': 'UNIT',
+          'available': 1
+        },
+        'category': {
+          'id': '260021'
+        },
+        'publication': {
+          'endingAt': '2019-04-19T08:40:12.000Z'
+        }
+      },
+      {
+        'id': '7976726914',
+        'name': 'kamerka Logitech QUICKCAM COMMUNICATE STX',
+        'seller': {
+          'id': '21039070',
+          'company': False,
+          'superSeller': False
+        },
+        'promotion': {
+          'emphasized': False,
+          'bold': False,
+          'highlight': False
+        },
+        'delivery': {
+          'availableForFree': False,
+          'lowestPrice': {
+            'amount': '15.00',
+            'currency': 'PLN'
+          }
+        },
+        'images': [
+          {
+            'url': 'https://a.allegroimg.com/original/035273/db903a814267a89edadf4a6fb77c'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/036a9e/5762d86a4d99866b272cbe37947e'
+          }
+        ],
+        'sellingMode': {
+          'format': 'AUCTION',
+          'price': {
+            'amount': '1.00',
+            'currency': 'PLN'
+          },
+          'bidCount': 0
+        },
+        'stock': {
+          'unit': 'UNIT',
+          'available': 1
+        },
+        'category': {
+          'id': '260021'
+        },
+        'publication': {
+          'endingAt': '2019-04-15T19:32:41.000Z'
+        }
+      },
+      {
+        'id': '7972181494',
+        'name': 'KAMERKA INTERNETOWA',
+        'seller': {
+          'id': '46078338',
+          'company': True,
+          'superSeller': False
+        },
+        'promotion': {
+          'emphasized': False,
+          'bold': False,
+          'highlight': False
+        },
+        'delivery': {
+          'availableForFree': False,
+          'lowestPrice': {
+            'amount': '19.00',
+            'currency': 'PLN'
+          }
+        },
+        'images': [
+          {
+            'url': 'https://a.allegroimg.com/original/01ef6e/4eb08e1747cbb1a12e59eabec051'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/01164e/a107fac04854bd395ba2fa4d1dfd'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/01ea40/afb8eb874212b904f7ee910e20b8'
+          }
+        ],
+        'sellingMode': {
+          'format': 'AUCTION',
+          'price': {
+            'amount': '1.00',
+            'currency': 'PLN'
+          },
+          'bidCount': 0
+        },
+        'stock': {
+          'unit': 'UNIT',
+          'available': 1
+        },
+        'category': {
+          'id': '260021'
+        },
+        'publication': {
+          'endingAt': '2019-04-19T11:45:02.000Z'
+        }
+      },
+      {
+        'id': '7975381548',
+        'name': 'KAMERKA KOMPUTEROWA OMEGA',
+        'seller': {
+          'id': '43992416',
+          'company': True,
+          'superSeller': False
+        },
+        'promotion': {
+          'emphasized': False,
+          'bold': False,
+          'highlight': False
+        },
+        'delivery': {
+          'availableForFree': False,
+          'lowestPrice': {
+            'amount': '19.00',
+            'currency': 'PLN'
+          }
+        },
+        'images': [
+          {
+            'url': 'https://a.allegroimg.com/original/013689/28a440be4e708291505cd85a5af9'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/01e1b5/4b272e71483397734b387433f968'
+          }
+        ],
+        'sellingMode': {
+          'format': 'BUY_NOW',
+          'price': {
+            'amount': '1.00',
+            'currency': 'PLN'
+          },
+          'fixedPrice': {
+            'amount': '24.00',
+            'currency': 'PLN'
+          },
+          'bidCount': 0
+        },
+        'stock': {
+          'unit': 'UNIT',
+          'available': 1
+        },
+        'category': {
+          'id': '260021'
+        },
+        'publication': {
+          'endingAt': '2019-04-20T12:04:27.000Z'
+        }
+      },
+      {
+        'id': '7976016500',
+        'name': 'KAMERA KOMPUTEROWA PC',
+        'seller': {
+          'id': '28001841',
+          'company': True,
+          'superSeller': False
+        },
+        'promotion': {
+          'emphasized': False,
+          'bold': False,
+          'highlight': False
+        },
+        'delivery': {
+          'availableForFree': False,
+          'lowestPrice': {
+            'amount': '19.00',
+            'currency': 'PLN'
+          }
+        },
+        'images': [
+          {
+            'url': 'https://a.allegroimg.com/original/019297/1b1b74c741a7a5d1d254b5fbd9ec'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/014128/cf86422f4ec08ae4362a086afed2'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/01824b/ee1e86c74535ba52d645428e0911'
+          },
+          {
+            'url': 'https://a.allegroimg.com/original/0198d1/0dff15844769b433ec7b2476af59'
+          }
+        ],
+        'sellingMode': {
+          'format': 'BUY_NOW',
+          'price': {
+            'amount': '1.00',
+            'currency': 'PLN'
+          },
+          'fixedPrice': {
+            'amount': '12.00',
+            'currency': 'PLN'
+          },
+          'bidCount': 0
+        },
+        'stock': {
+          'unit': 'UNIT',
+          'available': 1
+        },
+        'category': {
+          'id': '260021'
+        },
+        'publication': {
+          'endingAt': '2019-04-17T15:25:03.000Z'
+        }
+      },
+      {
+        'id': '7958491291',
+        'name': 'Kamera LABTEC WebCam USB',
+        'seller': {
+          'id': '7949377',
+          'company': False,
+          'superSeller': False
+        },
+        'promotion': {
+          'emphasized': False,
+          'bold': False,
+          'highlight': False
+        },
+        'delivery': {
+          'availableForFree': False,
+          'lowestPrice': {
+            'amount': '14.00',
+            'currency': 'PLN'
+          }
+        },
+        'images': [
+          {
+            'url': 'https://9.allegroimg.com/original/032795/4b5db3e4487fafb18a05a5597b69'
+          }
+        ],
+        'sellingMode': {
+          'format': 'AUCTION',
+          'price': {
+            'amount': '1.00',
+            'currency': 'PLN'
+          },
+          'bidCount': 0
+        },
+        'stock': {
+          'unit': 'UNIT',
+          'available': 1
+        },
+        'category': {
+          'id': '260021'
+        },
+        'publication': {
+          'endingAt': '2019-04-15T08:44:51.000Z'
+        }
+      }
+    ]
+  },
+  'searchMeta': {
+    'availableCount': 11,
+    'totalCount': 11,
+    'fallback': False
+  },
+  'categories': {
+    'subcategories': [
+      {
+        'id': '257064',
+        'name': 'Fotele gamingowe',
+        'count': 2
+      },
+      {
+        'id': '77766',
+        'name': 'GSM',
+        'count': 20
+      },
+      {
+        'id': '4689',
+        'name': 'Kable, taśmy, przedłużacze',
+        'count': 3967
+      },
+      {
+        'id': '260021',
+        'name': 'Kamery internetowe',
+        'count': 11
+      },
+      {
+        'id': '260024',
+        'name': 'Karty i rejestratory video',
+        'count': 3
+      },
+      {
+        'id': '77770',
+        'name': 'Karty miniPCI, miniPCIe',
+        'count': 72
+      },
+      {
+        'id': '77771',
+        'name': 'Karty PCMCIA i ExpressCard',
+        'count': 7
+      },
+      {
+        'id': '77780',
+        'name': 'Podstawki chłodzące',
+        'count': 5
+      },
+      {
+        'id': '4691',
+        'name': 'Przejściówki, śledzie',
+        'count': 849
+      },
+      {
+        'id': '77781',
+        'name': 'Stacje dokujące',
+        'count': 13
+      },
+      {
+        'id': '77885',
+        'name': 'Stoliki pod laptopa',
+        'count': 5
+      },
+      {
+        'id': '260020',
+        'name': 'Tunery TV i SAT',
+        'count': 4
+      },
+      {
+        'id': '260023',
+        'name': 'Zestawy i kamery do wideokonferencji',
+        'count': 1
+      },
+      {
+        'id': '77782',
+        'name': 'Torby, pokrowce',
+        'count': 36
+      },
+      {
+        'id': '505',
+        'name': 'Inne akcesoria',
+        'count': 536
+      }
+    ],
+    'path': [
+      {
+        'id': '954b95b6-43cf-4104-8354-dea4d9b10ddf',
+        'name': 'Allegro'
+      },
+      {
+        'id': '42540aec-367a-4e5e-b411-17c09b08e41f',
+        'name': 'Elektronika'
+      },
+      {
+        'id': '2',
+        'name': 'Komputery'
+      },
+      {
+        'id': '497',
+        'name': 'Akcesoria (Laptop, PC)'
+      },
+      {
+        'id': '260021',
+        'name': 'Kamery internetowe'
+      }
+    ]
+  },
+  'filters': [
+    {
+      'id': 'parameter.11323',
+      'type': 'MULTI',
+      'name': 'Stan',
+      'values': [
+        {
+          'value': '2',
+          'name': 'używane',
+          'count': 11,
+          'selected': False
+        }
+      ]
+    },
+    {
+      'id': 'sellingMode.format',
+      'type': 'MULTI',
+      'name': 'rodzaj oferty',
+      'values': [
+        {
+          'value': 'BUY_NOW',
+          'name': 'kup teraz',
+          'count': 5,
+          'selected': False
+        },
+        {
+          'value': 'AUCTION',
+          'name': 'licytacje',
+          'count': 9,
+          'selected': False
+        }
+      ]
+    },
+    {
+      'id': 'price',
+      'type': 'NUMERIC',
+      'name': 'cena',
+      'values': [
+        {
+          'idSuffix': '.from',
+          'value': '0',
+          'name': 'od',
+          'selected': True
+        },
+        {
+          'idSuffix': '.to',
+          'value': '3',
+          'name': 'do',
+          'selected': True
+        }
+      ],
+      'minValue': 0,
+      'maxValue': 1000000000,
+      'unit': 'zł'
+    },
+    {
+      'id': 'deliveryMethod',
+      'type': 'MULTI',
+      'name': 'sposoby dostawy',
+      'values': [
+        {
+          'value': '5b445fa0580ce26bb2f99602',
+          'name': 'Kurier',
+          'count': 6,
+          'selected': False
+        },
+        {
+          'value': '5b445fd9580ce26bb2f99608',
+          'name': 'Kurier wieczór',
+          'count': 0,
+          'selected': False
+        },
+        {
+          'value': '5b445fe6580ce26bb2f9960a',
+          'name': 'Paczkomaty InPost',
+          'count': 2,
+          'selected': False
+        },
+        {
+          'value': '5b446004580ce26bb2f9960c',
+          'name': 'Odbiór w punkcie',
+          'count': 2,
+          'selected': False
+        },
+        {
+          'value': '5b446013580ce26bb2f9960e',
+          'name': 'List',
+          'count': 2,
+          'selected': False
+        },
+        {
+          'value': '5b446031580ce26bb2f99610',
+          'name': 'Paczka',
+          'count': 4,
+          'selected': False
+        },
+        {
+          'value': '5b446044580ce26bb2f99612',
+          'name': 'Odbiór osobisty',
+          'count': 7,
+          'selected': False
+        },
+        {
+          'value': '5b44605c580ce26bb2f99614',
+          'name': 'Przesyłka elektroniczna',
+          'count': 0,
+          'selected': False
+        }
+      ]
+    },
+    {
+      'id': 'location.province',
+      'type': 'SINGLE',
+      'name': 'województwo',
+      'values': [
+        {
+          'value': 'DOLNOSLASKIE',
+          'name': 'z dolnośląskiego',
+          'selected': False
+        },
+        {
+          'value': 'KUJAWSKO_POMORSKIE',
+          'name': 'z kujawsko-pomorskiego',
+          'selected': False
+        },
+        {
+          'value': 'LUBELSKIE',
+          'name': 'z lubelskiego',
+          'selected': False
+        },
+        {
+          'value': 'LUBUSKIE',
+          'name': 'z lubuskiego',
+          'selected': False
+        },
+        {
+          'value': 'LODZKIE',
+          'name': 'z łódzkiego',
+          'selected': False
+        },
+        {
+          'value': 'MALOPOLSKIE',
+          'name': 'z małopolskiego',
+          'selected': False
+        },
+        {
+          'value': 'MAZOWIECKIE',
+          'name': 'z mazowieckiego',
+          'selected': False
+        },
+        {
+          'value': 'OPOLSKIE',
+          'name': 'z opolskiego',
+          'selected': False
+        },
+        {
+          'value': 'PODKARPACKIE',
+          'name': 'z podkarpackiego',
+          'selected': False
+        },
+        {
+          'value': 'PODLASKIE',
+          'name': 'z podlaskiego',
+          'selected': False
+        },
+        {
+          'value': 'POMORSKIE',
+          'name': 'z pomorskiego',
+          'selected': False
+        },
+        {
+          'value': 'SLASKIE',
+          'name': 'ze śląskiego',
+          'selected': False
+        },
+        {
+          'value': 'SWIETOKRZYSKIE',
+          'name': 'ze świętokrzyskiego',
+          'selected': False
+        },
+        {
+          'value': 'WARMINSKO_MAZURSKIE',
+          'name': 'z warmińsko-mazurskiego',
+          'selected': False
+        },
+        {
+          'value': 'WIELKOPOLSKIE',
+          'name': 'z wielkopolskiego',
+          'selected': False
+        },
+        {
+          'value': 'ZACHODNIOPOMORSKIE',
+          'name': 'z zachodniopomorskiego',
+          'selected': False
+        }
+      ]
+    },
+    {
+      'id': 'location.city',
+      'type': 'TEXT',
+      'name': 'miejscowość',
+      'values': [
+        {
+          'name': 'miejscowość',
+          'selected': False
+        }
+      ]
+    },
+    {
+      'id': 'parameter.220761',
+      'type': 'MULTI',
+      'name': 'Marka',
+      'values': [
+        {
+          'value': '292329',
+          'name': 'A4Tech',
+          'count': 0,
+          'selected': False
+        },
+        {
+          'value': '292333',
+          'name': 'Creative',
+          'count': 0,
+          'selected': False
+        },
+        {
+          'value': '292337',
+          'name': 'Labtec',
+          'count': 2,
+          'selected': False
+        },
+        {
+          'value': '292341',
+          'name': 'Logitech',
+          'count': 3,
+          'selected': False
+        },
+        {
+          'value': '292345',
+          'name': 'Media-tech',
+          'count': 0,
+          'selected': False
+        },
+        {
+          'value': '292349',
+          'name': 'Microsoft',
+          'count': 1,
+          'selected': False
+        },
+        {
+          'value': '292353',
+          'name': 'Tracer',
+          'count': 1,
+          'selected': False
+        },
+        {
+          'value': '292357',
+          'name': 'Trust',
+          'count': 0,
+          'selected': False
+        },
+        {
+          'value': '292361',
+          'name': 'inna',
+          'count': 4,
+          'selected': False
+        }
+      ]
+    },
+    {
+      'id': 'option',
+      'type': 'MULTI',
+      'name': 'oferta ma',
+      'values': [
+        {
+          'value': 'FREE_SHIPPING',
+          'name': 'darmowa dostawa',
+          'selected': False
+        },
+        {
+          'value': 'FREE_RETURN',
+          'name': 'darmowy zwrot InPost',
+          'selected': False
+        },
+        {
+          'value': 'VAT_INVOICE',
+          'name': 'faktura VAT',
+          'selected': False
+        },
+        {
+          'value': 'COINS',
+          'name': 'Monety Allegro',
+          'selected': False
+        },
+        {
+          'value': 'BRAND_ZONE',
+          'name': 'Strefa Marek',
+          'selected': False
+        },
+        {
+          'value': 'SUPERSELLER',
+          'name': 'Super Sprzedawca',
+          'selected': False
+        },
+        {
+          'value': 'CHARITY',
+          'name': 'Allegro Charytatywni',
+          'selected': False
+        },
+        {
+          'value': 'SMART',
+          'name': 'Allegro Smart!',
+          'selected': False
+        }
+      ]
+    },
+    {
+      'id': 'campaign',
+      'type': 'MULTI',
+      'name': 'kampania',
+      'values': [
+        {
+          'value': 'INSTALLMENTS_ZERO',
+          'name': 'raty zero',
+          'selected': False
+        },
+        {
+          'value': 'BARGAIN',
+          'name': 'Strefa okazji',
+          'selected': False
+        },
+        {
+          'value': 'BARGAIN_REBATE',
+          'name': 'rabaty',
+          'selected': False
+        }
+      ]
+    }
+  ],
+  'sort': [
+    {
+      'value': '-relevance',
+      'name': 'trafność',
+      'order': 'największa',
+      'selected': True
+    },
+    {
+      'value': '+price',
+      'name': 'cena',
+      'order': 'od najniższej',
+      'selected': False
+    },
+    {
+      'value': '-price',
+      'name': 'cena',
+      'order': 'od najwyższej',
+      'selected': False
+    },
+    {
+      'value': '+withDeliveryPrice',
+      'name': 'cena z dostawą',
+      'order': 'od najniższej',
+      'selected': False
+    },
+    {
+      'value': '-withDeliveryPrice',
+      'name': 'cena z dostawą',
+      'order': 'od najwyższej',
+      'selected': False
+    },
+    {
+      'value': '-popularity',
+      'name': 'popularność',
+      'order': 'największa',
+      'selected': False
+    },
+    {
+      'value': '+endTime',
+      'name': 'czas do końca',
+      'order': 'najmniej',
+      'selected': False
+    },
+    {
+      'value': '-startTime',
+      'name': 'czas dodania',
+      'order': 'najnowsze',
+      'selected': False
+    }
+  ]
+}

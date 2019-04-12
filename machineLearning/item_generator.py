@@ -22,3 +22,17 @@ categories_dict = {
         "głośniki": "259434",
         "mikrofony i słuchawki": "259422"
         }
+
+def get_items_from_json():
+    import ast
+
+    with open('dane.json','r', encoding="utf8") as json_file:
+        s = json_file.read()
+        s = s.replace("\'", "\"")
+        data = ast.literal_eval(s)
+    
+    json_file.close()
+    items = data["items"]
+    all_items = items["promoted"] + items["regular"]
+    
+    return all_items
