@@ -19,6 +19,7 @@ def get_products_from_category(cat_id, seller_id=None, max_price=None, num_produ
 
 
 def get_products_from_seller(seller_id, max_price=None, category_id=None, num_products=None):
+    url = "https://api.allegro.pl/offers/listing?category.id=" + str(cat_id)
     if category_id:
         url = url + "&category.id=" + str(category_id)
     if max_price:
