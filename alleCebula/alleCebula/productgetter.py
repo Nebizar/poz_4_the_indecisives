@@ -16,7 +16,7 @@ def get_products_from_category(cat_id, seller_id=None, max_price=None, num_produ
                                           'content-type': 'application/vnd.allegro.public.v1+json',
                                           'Authorization': 'Bearer ' + token})
     if response.ok:
-        return response.json()
+        return get_items_from_api(response.json())
     return None
 
 
@@ -33,5 +33,5 @@ def get_products_from_seller(seller_id, max_price=None, cat_id=None, num_product
                                           'Authorization': 'Bearer ' + token})
 
     if response.ok:
-        return response.json()
+        return get_items_from_api(response.json())
     return None
