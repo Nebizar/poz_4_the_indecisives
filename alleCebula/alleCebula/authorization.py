@@ -1,4 +1,4 @@
-from credentials import client_id, client_secret
+from alleCebula.credentials import client_id, client_secret
 from base64 import b64encode
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import requests

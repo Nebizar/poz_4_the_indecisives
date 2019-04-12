@@ -1,6 +1,6 @@
 import requests
-from authorization import token
-from alleCebula.propozycje.machineLearning.item_generator import get_items_from_api
+from alleCebula.authorization import token
+from propozycje.machineLearning.item_generator import get_items_from_api
 
 
 def get_products_from_category(cat_id, seller_id=None, max_price=None, num_products=None):
@@ -21,7 +21,7 @@ def get_products_from_category(cat_id, seller_id=None, max_price=None, num_produ
 
 
 def get_products_from_seller(seller_id, max_price=None, cat_id=None, num_products=None):
-    url = "https://api.allegro.pl/offers/listing?category.id={}&sellingMode.format={}".format(str(cat_id), "BUY_NOW")
+    url = "https://api.allegro.pl/offers/listing?seller.id={}&sellingMode.format={}".format(str(cat_id), "BUY_NOW")
     if cat_id:
         url = url + "&category.id=" + str(cat_id)
     if max_price:

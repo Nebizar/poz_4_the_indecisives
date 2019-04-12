@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>alleCebula</title>
+
+    <!--FONTS-->
+    <link href="https://fonts.googleapis.com/css?family=Anton|Montserrat" rel="stylesheet">
+    <!--jQuery-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        #value{
+            text-align: center;
+        }
+        #value p{
+            font-size: 35px;
+            padding-top: 20px;
+            margin: 0px;
+            padding:0px;
+        }
+        #value img{
+            display: inline;
+            width: 20px;
+        }
+        #getNew{
+            background-color: #ff5a00;
+            color: white;
+            margin-top: 80px;
+            margin-bottom: 80px;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #getNew p{
+            line-height: 30px;
+            font-size: 25px;
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="searchBar">
+        <select class="col-lg-3 offset-lg-1 col-10 offset-1" name="cars">
+            <div>
+                {% for category in categories %}
+                    <option value="{{category}}">{{category}}</option>
+                {% endfor %}
+            </div>
+        </select>
+    </div>
+
+    <div id="value" class="row col-12 offset-0 align-items-center">
+        <div class="value col-lg-6 offset-lg-3 col-8 offset-2">
+            <p>
+                <img src="https://image.flaticon.com/icons/svg/54/54351.svg">
+                <span id="myValue">400</span> zł
+                <img src="https://image.flaticon.com/icons/png/512/70/70526.png">
+            </p>
+        </div>
+    </div>
+
+    <main class="col-10 offset-1 row">
+        
+        
+    </main>
+
+    <div id="getNew" class="col-lg-4 offset-lg-4 col-6 offset-3">
+        <p>Więcej</p>
+    </div>
+</body>
+
+<script>
+
+    function initialise()
+    {
+        $('.allegroProduct').hover(function(){
+            $(this).children('.poss').children('.details').stop().slideDown();
+        }, function(){
+            $(this).children('.poss').children('.details').stop().slideUp();
+        })
+    } 
+
+
+    
+    $('#getNew').click(function(){
+        var category = $('#searchBar select').val();
+        var price = $('#myValue').html();
+        $.get('process/'+category+'/' + price + '/', function(data){
+            $('main').html(data);
+            initialise();
+        });
+    })
+
+</script>
+</html>

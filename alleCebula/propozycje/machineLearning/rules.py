@@ -6,10 +6,8 @@ Created on Fri Apr 12 20:21:17 2019
 """
 
 import csv
-from apyori import apriori
-
 def read_data():
-    with open('shopping-data.csv', 'r') as readFile:
+    with open('propozycje/machineLearning/shopping-data.csv', 'r') as readFile:
         reader = csv.reader(readFile)
         output = list(reader)
     
@@ -18,6 +16,7 @@ def read_data():
     return output
 
 def compute_rules(transactions):
+    from propozycje.machineLearning.apyori import apriori
     rules = apriori(transactions, min_support = round((len(transactions)**(1/1024)) - 1 , 3),
                     min_confidence = .2, min_lift = 3, min_length = 2)
     results = list(rules)
@@ -31,6 +30,7 @@ def add_new_data(new_data):
     csvFile.close()
     
 def create_rules():
+
     data = read_data()
     rules = compute_rules(data)
     #print(type(rules))
