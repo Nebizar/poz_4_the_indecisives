@@ -2,7 +2,7 @@
 """
 Created on Fri Apr 12 20:21:17 2019
 
-@author: apasi
+@author: Krzysztof Pasiewicz
 """
 
 import csv
@@ -38,4 +38,3 @@ def create_rules():
     for i in range(0, len(rules)):
         results_list.append(list(rules[i][0]))
     return results_list
-
