@@ -46,4 +46,4 @@ def authorize_user(client_id, redirect_uri = REDIRECT_URI):
 
 
 token = get_access_token(client_id, client_secret)
-user_code = authorize_user(client_id)
+#user_code = authorize_user(client_id)

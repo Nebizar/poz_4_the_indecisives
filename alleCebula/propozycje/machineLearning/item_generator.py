@@ -36,3 +36,9 @@ def get_items_from_json():
     all_items = items["promoted"] + items["regular"]
     
     return all_items
+
+
+def get_items_from_api(data):
+    items = data["items"]
+    all_items = items["promoted"] + items["regular"]
+    return all_items
