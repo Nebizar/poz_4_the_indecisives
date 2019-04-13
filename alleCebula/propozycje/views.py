@@ -99,7 +99,7 @@ def process_one(request, price, category):
 
     bundles_sample = compute(price, category)
 
-    template = loader.get_template('propozycje/zero/productList.html')
+    template = loader.get_template('propozycje/zero/singleList.html')
 
     bundles_shuffled = []
     bundles_shuffled = shuffle_bundles_one(bundles_sample)
