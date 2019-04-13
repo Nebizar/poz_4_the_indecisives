@@ -1,8 +1,9 @@
-from alleCebula.credentials import client_id, client_secret
+from alleCebula.credentials import client_id, client_secret, fb_app_id, fb_app_secret, fb_page_id
 from base64 import b64encode
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import requests
 import webbrowser
+import facebook
 
 REDIRECT_URI="http://localhost:5500"
 
@@ -43,6 +44,20 @@ def authorize_user(client_id, redirect_uri = REDIRECT_URI):
     httpd.handle_request()
     httpd.server_close()
     return httpd.code
+
+
+def post_to_facebook(url):
+    graph = facebook.GraphAPI(access_token=fb_page_id, version="3.2")
+
+    # Add a link and write a message about it.
+    graph.put_object(
+        parent_object="me",
+        connection_name="feed",
+        message="W tym tygodniu Order Cebuli goes to:",
+        link=url)
+
+
+
 
 
 token = get_access_token(client_id, client_secret)
