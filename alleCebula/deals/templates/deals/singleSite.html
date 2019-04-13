@@ -11,7 +11,7 @@
 
 {% block content%}
 
-    <div id="singleProduct" class=" col-10 offset-1 row">
+    <div id="singleProduct" class="product col-10 offset-1 row" itemid="{{product.id}}">
         <div class="singleProductImage col-md-6">
             <img src="{{product.picture}}">
         </div>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="rank row col-6 p-0 ">
-                    <p class="col-6">{{product.cebulions}}</p>
+                    <p class=" score col-6">{{product.cebulions}}</p>
                     <div class="happy col-6">
                         <img src="{% static 'onion.png' %}">
                     </div>

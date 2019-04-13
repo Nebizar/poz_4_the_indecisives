@@ -33,7 +33,7 @@
 
         <a href="/deals/">
             <div id="logo" class="col-10 offset-1 row  align-items-center">
-                <div class="logoImg col-md-1">
+                <div class="logoImg col-md-2">
                     <img src="https://cdn.shopify.com/s/files/1/2040/0303/products/Cute_Happy_Healthy_Vegetable_Food_Cartoon_Emoji_-_Onion_523292519_grande.jpg?v=1515813145">
                 </div>
                 <h1 class="col-md-2 mt-lg-0 mt-5">AlleCebula</h1>
@@ -52,13 +52,44 @@
 
 <script>
 
+    sessionStorage.SessionName = "temp"
+
+    $(document).ready(function(){
+        $('.sad').each(function(){
+            var myid = $(this).parents('.product').attr('itemid');
+            var mySession = sessionStorage.getItem(myid)
+
+            if(mySession == '1'){
+                $(this).parent().children().hide();
+            }
+        })
+    })
+
+
     $('.sad').click(function(){
         var myid = $(this).parents('.product').attr('itemid');
-        alert(myid)
+        var me = $(this)
+        $.get('sub/' + myid +'/', function(data){
+            var score = me.parents('.top').find('.score');
+            score.html(parseInt(score.html()) - 1)
+            me.parent().children().hide();
+
+            sessionStorage.setItem(myid,"1");
+           
+        })
     })
 
     $('.happy').click(function(){
-        
+        var myid = $(this).parents('.product').attr('itemid');
+        var me = $(this)
+        $.get('add/' + myid +'/', function(data){
+            var score = me.parents('.top').find('.score');
+            score.html(parseInt(score.html()) + 1)
+            me.parent().children().hide();
+
+            sessionStorage.setItem(myid,"1");
+            
+        })
     })
 </script>
 </html>

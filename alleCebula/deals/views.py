@@ -34,3 +34,20 @@ def details(request, id):
     }
 
     return HttpResponse(template.render(context, request))
+
+
+def add(request, id):
+    product = Item.objects.get(pk=id)
+    product.cebulions += 1
+    product.save()
+    #
+    return HttpResponse('')
+    #
+    
+
+def sub(request, id):
+    product = Item.objects.get(pk=id)
+    product.cebulions -= 1
+    product.save()
+    #
+    return HttpResponse('')
