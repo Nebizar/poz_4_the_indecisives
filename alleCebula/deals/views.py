@@ -3,20 +3,11 @@ from django.http import HttpResponse
 from django.template import loader
 from deals.models import Item
 from deals.models import Comment
-from alleCebula.alleCebula.authorization import post_to_page
+from alleCebula.authorization import post_to_page
+from django.contrib.auth.decorators import login_required
 
 def deals(request):
     template = loader.get_template('deals/index.html')
-    
-    """
-    pr = Item(
-        picture = "https://1.allegroimg.com/s720/0322e5/21cfc7684e40928e4445a5c74751",
-        name = "MYSZKA BEZPRZEWODOWA LOGITECH M545 CZARNA",
-        price = 95,
-        cebulions = "0",
-        category_id = "4575"
-    )
-    pr.save()"""
 
     products = Item.objects.all()
 
@@ -70,6 +61,7 @@ def sub(request, id):
     #
     return HttpResponse('')
 
+@login_required
 def post_to_facebook(request, url, msg):
     status = post_to_page(msg+' '+url)
     return HttpResponse('')
