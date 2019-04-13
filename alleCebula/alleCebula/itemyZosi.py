@@ -41,8 +41,8 @@ def bundle_to_array(bundle):
     id=''
     products=[]
     for item in bundle:
-        id.append(item["category"]["id"])
-        id.append("a")
+        id+=item["category"]["id"]
+        id+="a"
         if(len(item["images"])>0):
             products.append({
                 'name':item["name"],
@@ -59,7 +59,7 @@ def bundle_to_array(bundle):
         'id': id[:-1],
         'products': products
     }
-    return products
+    return bundle
 
 
 def shuffle_bundles(bundles):

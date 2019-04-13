@@ -9,7 +9,8 @@ from django.template import loader
 def propositions(request):
     template = loader.get_template('propozycje/zero/index.html')
     #TODO zamienic na wlasciwe kategorie
-    categories = {'aaa', 'bbb', 'ccc', 'ddd'}
+    categories = {'myszki','klawiatury','zestaw klawiatura i mysz','pady','piloty','joysticki','tablety graficzne','monitory','dyski zewnetrzne i przenośne',
+        'pendrive','śledzie','kamery internetowe','zestawy i kamery do wideokonferencji','gogle VR','głośniki','mikrofony i słuchawki'}
 
     context = {
         'categories': categories,
@@ -19,12 +20,11 @@ def propositions(request):
 
 def process(request, price, category):
     #get data from API and machine learning stuff
-    category="monitory"
-    base_price=200
     rules = create_rules()
+    base_price = float(price)
     associated_categories= get_associated_categories(rules, category)
 
-    items_number = 50
+    items_number = 20
     category_number = len(associated_categories)
     items_per_category = items_number // category_number
 
@@ -50,11 +50,12 @@ def process(request, price, category):
                     if other_item["sellingMode"]["format"] == "BUY_NOW":
                         bundle_sample.append(other_item)
                         new_price = other_price - float(other_item["sellingMode"]["price"]["amount"])
-                        bundles.append(bundle_sample)
                         products = bundle_to_array(bundle_sample)
+                        bundles.append(products)
 
 
     template = loader.get_template('propozycje/zero/productList.html')
+
 
     """
     products = [
@@ -75,7 +76,7 @@ def process(request, price, category):
             }
     ]
     """
-
+    """
     bundle = {
         'id': 'abc',
         'products': products
@@ -83,7 +84,7 @@ def process(request, price, category):
 
     bundles = []
     bundles.append(bundle)
-
+    """
     context = {
         'bundles': bundles
     }
