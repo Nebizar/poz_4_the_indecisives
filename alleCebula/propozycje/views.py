@@ -10,7 +10,7 @@ import numpy as np
 def propositions(request):
     template = loader.get_template('propozycje/zero/index.html')
     #TODO zamienic na wlasciwe kategorie
-    categories = {'myszki','klawiatury','zestaw klawiatura i mysz','pady','piloty','joysticki','tablety graficzne','monitory','dyski zewnetrzne i przenosne',
+    categories = {'myszki','klawiatury','pady','piloty','joysticki','tablety graficzne','monitory','dyski zewnetrzne i przenosne',
         'pendrive','sledzie','kamery internetowe','zestawy i kamery do wideokonferencji','gogle VR','glosniki','mikrofony i sluchawki'}
 
     context = {
@@ -79,6 +79,7 @@ def compute(price, category, flag):
 
 def process(request, price, category):
     category = category.replace("_", " ")
+    print("Dlugosc: ",len(category))
     bundles_sample = []
     bundles = []
 
