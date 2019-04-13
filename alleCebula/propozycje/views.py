@@ -60,8 +60,7 @@ def process(request, price, category):
 
                         for new_category in associated_categories:
                             cat_id = categories_dict[new_category]
-                            another_items = get_products_from_category(cat_id, max_price=new_price,
-                                                                     num_products=items_per_category)
+                            another_items = get_products_from_category(cat_id, max_price=new_price, num_products=items_per_category)
                             i=0
                             for another_item in another_items:
                                 i+=1
