@@ -47,7 +47,7 @@ def authorize_user(client_id, redirect_uri = REDIRECT_URI):
 
 
 def login_to_facebook(url):
-    graph = facebook.GraphAPI(access_token=fb_access_token, version="3.2")
+    graph = facebook.GraphAPI(access_token=fb_access_token)
     redirect_uri = REDIRECT_URI
     perms = ["manage_pages", "publish_pages"]
     fb_login_url = graph.get_auth_url(fb_app_id, redirect_uri, perms)
@@ -55,15 +55,15 @@ def login_to_facebook(url):
     return
 
 def get_fb_auth(fb_access_token):
-    graph = facebook.GraphAPI(access_token=fb_access_token, version="3.2")
+    graph = facebook.GraphAPI(access_token=fb_access_token)
     pages_data = graph.get_object("/me/accounts")
 
     page_id = fb_page_id
     page_token = None
 
     for item in pages_data['data']:
-        if item['id'] == page_id':
-        page_token = item['access_token']
+        if item['id'] == page_id:
+            page_token = item['access_token']
 
     return page_token
 
