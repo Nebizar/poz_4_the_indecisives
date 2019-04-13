@@ -1,10 +1,10 @@
 
 {% for bundle in bundles %}
 
-        <h2 class="w-100">Lepiej w zestawie</h2>
+        <h2 class="w-100">Zobacz także</h2>
 
         {% for product in bundle.products %}
-        <div class="product col-md-4" itemid="{{product.id}}">
+        <div class="product col-md-4" itemid="{{bundle.id}}">
             <div class="top row">
 
             </div>
@@ -17,7 +17,7 @@
             </div>
         </div>
         {% endfor %}
-        <div id="buy" class="col-md-3 offset-md-9 mt-md-5 mt-md-0 mt-5">
+        <div id="buy" itemid="{{bundle.id}}" class="col-md-3 offset-md-9 mt-md-5 mt-md-0 mt-5">
             <p>Kup zestaw</p>
         </div>
 

@@ -74,9 +74,16 @@ h1{
     max-height: 30px;
     overflow: hidden;
 }
+.choose>div{
+    display: none;
+}
 .choose.row, .top.row, .rank.row{
     margin-left: 0px;
     margin-right: 0px;
+}
+.choose.row img{
+    width: 60%;
+    margin-left: 15%;
 }
 .choose img:hover{
     border: 3px solid #ff5a00;
@@ -86,6 +93,12 @@ h1{
     line-height: 30px;
     color: white;
     text-align: right;
+    z-index:40;
+    font-weight: 900;
+}
+
+.rank img{
+    margin-left: -40px;
 }
 
 footer{
@@ -95,6 +108,11 @@ footer{
     background-color: #ff5a00;
 }
 
+.rank .happy{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 a{
     text-decoration: none;
     color:inherit;
@@ -102,4 +120,21 @@ a{
 a:hover{
     text-decoration: none;
     color:inherit;
+}
+
+
+#fbNew{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 90px;
+    right: 40px;
+    z-index: 100;
+    cursor: pointer;
+}
+#fbNew:hover{
+    opacity: 0.9
+}
+#fbNew img{
+    width: 100%;
 }

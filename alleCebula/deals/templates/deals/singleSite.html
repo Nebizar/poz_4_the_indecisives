@@ -11,6 +11,13 @@
 
 {% block content%}
 
+
+{% if perms.app_label.admin %}
+    <div id="fbNew" itemid="{{product.id}}">
+        <img src="https://facebookbrand.com/wp-content/themes/fb-branding/assets/images/fb-logo.png">
+    </div>
+{% endif %}
+
     <div id="singleProduct" class="product col-10 offset-1 row" itemid="{{product.id}}" category="{{product.category_id}}">
         <div class="singleProductImage col-md-6">
             <img src="{{product.picture}}">
@@ -26,10 +33,10 @@
             <div class="onionRank row">
                 <div class="choose col-6 row align-items-center p-1">
                     <div class="sad col-6 p-1">
-                        <img src="{% static 'sadOnion.png' %}">
+                        <img src="{% static 'minus_black.png' %}">
                     </div>
                     <div class="happy col-6 p-1">
-                        <img src="{% static 'onion.png' %}">
+                        <img src="{% static 'plus_black.png' %}">
                     </div>
                 </div>
                 <div class="rank row col-6 p-0 ">
@@ -49,7 +56,7 @@
     <main>
         
         <div id="productList" class="col-10 offset-1 row">
-            <h2 class="w-100">Lepiej w zestawie</h2>
+            <h2 class="w-100">Zobacz także</h2>
 
             <div class="product col-md-4">
                 <div class="top row">
@@ -126,7 +133,13 @@
 
 
     <script>
+
+        
+
+        
+
         $(document).ready(function(){
+           
             var category = $('#singleProduct').attr('category');
             var price = parseInt(parseFloat($('#pp').html().replace(',','.').replace(' ','')));
            
@@ -135,6 +148,13 @@
                 success: function(data){
                     console.log('sadadasd'+data);
                     $('#productList').html(data);
+
+                    $('#buy').click(function(){
+                        var myid = $(this).attr('itemid')
+
+                        $.get('/propositions/buy/'+myid+'/', function(data){
+                        })
+                    })
                 },
                 error: function(){
                     console.log('error');

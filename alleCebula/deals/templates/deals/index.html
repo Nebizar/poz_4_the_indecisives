@@ -1,9 +1,10 @@
 
-
 {%extends 'deals/layout.html' %}
 
 {% load static %}
 {%block content%}
+
+
     <main>
         <div id="productList" class="col-10 offset-1 row">
 
@@ -15,15 +16,15 @@
                     <div class="top row">
                         <div class="choose col-6 row align-items-center p-1">
                             <div class="sad col-6 p-1">
-                                <img src="{% static 'sadOnion.png' %}">
+                                <img src="{% static 'minus_white.png' %}">
                             </div>
                             <div class="happy col-6 p-1">
-                                <img src="{% static 'onion.png' %}">
+                                <img src="{% static 'plus_white.png' %}">
                             </div>
                         </div>
                         <div class="rank row col-6 p-0 ">
                             <p class="score col-6">{{product.cebulions}}</p>
-                            <div class="happy col-6">
+                            <div class="happy col-6 mt-1">
                                 <img src="{% static 'onion.png' %}">
                             </div>
                         </div>
@@ -49,7 +50,20 @@
 
 
     <script>
+        function sadFacesEverywhereSoSadImSoAlone(){
+            $('.onionrank .rank').each(function(){
+                var score = $(this).find('.score').html()
+                if(score < 0){
+                    $(this).find('.happy img').attr('src', '/deals/static/sadOnion.png')
+                }else{
+                    $(this).find('.happy img').attr('src', '/deals/static/onion.jpg')
+                }
+            })
+        }
+
         $(document).ready(function(){
+            sadFacesEverywhereSoSadImSoAlone();
+            
             $('.sad').click(function(){
                 var myid = $(this).parents('.product').attr('itemid');
                 var me = $(this)

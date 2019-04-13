@@ -4,7 +4,6 @@ Created on Fri Apr 12 21:43:37 2019
 
 @author: Krzysztof Pasiewicz
 """
-# used Allegro categories and their IDs in API
 categories_dict = {
         "myszki": "4575",
         "klawiatury": "4566",
@@ -24,7 +23,6 @@ categories_dict = {
         "glosniki": "259434"
         }
 
-# get items list from saved json file - for testing
 def get_items_from_json():
     import ast
 
@@ -39,7 +37,7 @@ def get_items_from_json():
     
     return all_items
 
-# get items from API.Get
+
 def get_items_from_api(data):
     items = data["items"]
     all_items = items["promoted"] + items["regular"]

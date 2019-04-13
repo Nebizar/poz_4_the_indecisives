@@ -59,11 +59,21 @@
             var myid = $(this).parents('.product').attr('itemid');
             var mySession = sessionStorage.getItem(myid)
 
-            if(mySession == '1'){
-                $(this).parent().children().hide();
+            if(mySession != '1'){
+                $(this).parent().children().show();
             }
         })
+
+
+        $('#fbNew').click(function(){
+        
+            $.get('fbUpdate/', function(data){
+                alert("Dodałeś post!")
+            })
+        })
     })
+
+
 
 </script>
 </html>

@@ -18,7 +18,7 @@ def get_access_token(client_id, client_secret):
     if response.ok:
         access_token = response.json()['access_token']
     return access_token
-
+"""
 
 def authorize_user(client_id, redirect_uri = REDIRECT_URI):
 
@@ -53,7 +53,9 @@ def login_to_facebook(url):
     fb_login_url = graph.get_auth_url(fb_app_id, redirect_uri, perms)
     print(fb_login_url)
     return
+"""
 
+"""
 def get_fb_auth(fb_access_token):
     graph = facebook.GraphAPI(access_token=fb_access_token)
     pages_data = graph.get_object("/me/accounts")
@@ -66,12 +68,21 @@ def get_fb_auth(fb_access_token):
             page_token = item['access_token']
 
     return page_token
+"""
 
 def post_to_page(message):
-    graph = facebook.GraphAPI(access_token=page_token)
-    status = graph.put_wall_post(message)
-    return status
+    message = message.replace(' ', '\%20')
+    message = message.replace('\n', '\%0A')
+    r = requests.post("https://graph.facebook.com/v3.2/2121524784551397/feed?message="+message+"&access_token="+fb_access_token)
+
+    print('----------------------')
+    print(r)
+    print('----------------------')
+    #graph = facebook.GraphAPI(access_token=fb_access_token)
+    #status = graph.put_wall_post(message)
+    #status=graph.put_object(parent_object='2121524784551397', connection_name="feed", message=message)
+    return r
 
 token = get_access_token(client_id, client_secret)
-page_token=get_fb_auth(fb_access_token)
+#page_token=get_fb_auth(fb_access_token)
 #user_code = authorize_user(client_id)

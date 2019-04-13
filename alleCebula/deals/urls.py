@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^(?P<id>\d+)/$', views.details, name='propositions-buy'),
     url(r'^add/(?P<id>\d+)/$', views.add, name='propositions-buy'),
     url(r'^sub/(?P<id>\d+)/$', views.sub, name='propositions-buy'),
+    url(r'^(?P<id>\d+)/fbUpdate/$', views.post_to_facebook, name='share'),
 ]
