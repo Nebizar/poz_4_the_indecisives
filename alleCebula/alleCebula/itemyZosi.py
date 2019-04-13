@@ -1,4 +1,4 @@
-from productgetter import get_products_from_seller
+from productgetter import get_products_from_seller, get_products_from_category
 from propozycje.machineLearning.item_generator import categories_dict
 
 def get_total_price(bundle):
@@ -8,11 +8,12 @@ def get_total_price(bundle):
     return price
 
 
-def get_bundles(bundles, seller_id, category_id, max_price, num_products):
+def get_bundles(bundles, category_id, max_price, num_products):
     new_bundles=[]
-    new_items=get_products_from_seller(seller_id, cat_id=category_id, max_price=max_price, num_products=num_products)
+    new_items=get_products_from_category(cat_id=category_id, max_price=max_price, num_products=num_products)
     for item in new_items:
-        if item["sellingMode"]["format"] == "BUY_NOW":
+       #if item["sellingMode"]["format"] == "BUY_NOW":
+       if True:
             price=float(item["sellingMode"]["price"]["amount"])
             for bundle in bundles:
                 if get_total_price(bundle)+price<=max_price:
@@ -22,13 +23,15 @@ def get_bundles(bundles, seller_id, category_id, max_price, num_products):
 
 
 def process_xd(items, categories, max_price, num_products):
+    bundles=[]
     for item in items:
-        if item["sellingMode"]["format"] == "BUY_NOW":
-            seller_id=item["seller"]["id"]
-            bundles=[[item]]
-            for category in categories:
-                cat_id = categories_dict[category]
-                bundles=get_bundles(bundles, seller_id, category, max_price, num_products)
+        print
+        #if item["sellingMode"]["format"] == "BUY_NOW":
+        #seller_id=item["seller"]["id"]
+        bundles.append([item])
+        for category in categories:
+            cat_id = categories_dict[category]
+            bundles=get_bundles(bundles, category, max_price, num_products)
     return bundles
 
 
@@ -36,6 +39,7 @@ def bundle_to_array(bundle):
     products=[]
     for item in bundle:
         products.append({
+            'id': item["id"],
             'name':item["name"],
             'price': item["sellingMode"]["price"]["amount"],
             'image':item["images"][0]["url"]

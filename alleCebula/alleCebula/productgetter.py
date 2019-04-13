@@ -17,7 +17,7 @@ def get_products_from_category(cat_id, seller_id=None, max_price=None, num_produ
                                           'Authorization': 'Bearer ' + token})
     if response.ok:
         return get_items_from_api(response.json())
-    return None
+    return []
 
 
 def get_products_from_seller(seller_id, max_price=None, cat_id=None, num_products=None):
@@ -34,4 +34,4 @@ def get_products_from_seller(seller_id, max_price=None, cat_id=None, num_product
 
     if response.ok:
         return get_items_from_api(response.json())
-    return None
+    return []
