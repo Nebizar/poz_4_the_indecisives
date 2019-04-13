@@ -64,6 +64,10 @@ def compute(price, category):
     return bundles
 
 def process(request, price, category):
+    for key, value in categories_dict.items():
+        if value == category:
+            category = key
+            break
     category = category.replace("_", " ")
     bundles_sample = []
     bundles = []
@@ -86,7 +90,10 @@ def process(request, price, category):
     return HttpResponse(template.render(context, request))
 
 def process_one(request, price, category):
-    category = category.replace("_", " ")
+    for key, value in categories_dict.items():
+        if value == category:
+            category = key
+            break
     bundles_sample = []
     bundles = []
 
