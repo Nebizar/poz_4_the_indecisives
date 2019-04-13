@@ -13,14 +13,14 @@ categories_dict = {
         "joysticki": "4565",
         "tablety graficzne": "4570",
         "monitory": "260041",
-        "dyski zewnetrzne i przenośne": "77939",
+        "dyski zewnetrzne i przenosne": "77939",
         "pendrive": "257960",
-        "śledzie": "4739",
+        "sledzie": "4739",
         "kamery internetowe": "260021",
         "zestawy i kamery do wideokonferencji": "260023",
-        "gogle VR": "260043",
-        "głośniki": "259434",
-        "mikrofony i słuchawki": "259422"
+        "gogle Vi": "259434",
+        "mikrofoR": "260043",
+        "glosniki i sluchawki": "259422"
         }
 
 def get_items_from_json():
