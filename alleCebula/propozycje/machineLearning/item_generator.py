@@ -18,9 +18,9 @@ categories_dict = {
         "sledzie": "4739",
         "kamery internetowe": "260021",
         "zestawy i kamery do wideokonferencji": "260023",
-        "gogle Vi": "259434",
-        "mikrofoR": "260043",
-        "glosniki i sluchawki": "259422"
+        "gogle VR": "259434",
+        "mikrofony i sluchawki": "260043",
+        "glosniki": "259422"
         }
 
 def get_items_from_json():
