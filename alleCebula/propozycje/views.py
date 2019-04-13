@@ -65,7 +65,7 @@ def compute(price, category):
                                 if i > 3:
                                     break
                                 another_bundle_sample = [item, other_item]
-                                if another_item["sellingMode"]["format"] == "BUY_NOW" and price_ok(another_bundle_sample, another_item, base_price):
+                                if another_item["sellingMode"]["format"] == "BUY_NOW" and price_ok(another_bundle_sample, another_item, base_price) and another_item["category"]["id"] != other_item["category"]["id"]:
                                     another_bundle_sample.append(another_item)
                                     bundles.append(another_bundle_sample)
 
