@@ -7,6 +7,7 @@ from django.http import HttpResponse
 from django.template import loader
 import numpy as np
 
+# send list of available categories to JS
 def propositions(request):
     template = loader.get_template('propozycje/zero/index.html')
     
@@ -19,13 +20,14 @@ def propositions(request):
 
     return HttpResponse(template.render(context, request))
 
+# creation of bundles of items based on association rules learned by Apriori algorithm
 def compute(price, category, flag):
     #get data from API and machine learning stuff
     rules = create_rules()
-    #print(rules)
+    
     base_price = float(price)
     associated_categories= get_associated_categories(rules, category)
-    #print(associated_categories)
+    
 
     items_number = 50
     category_number = len(associated_categories)
@@ -36,7 +38,6 @@ def compute(price, category, flag):
     #print(items)
     bundles = []
     products = []
-    bundles = []
     category_items=[]
 
     #bundles_sample = xd(items, associated_categories, items_per_category, base_price)
@@ -75,6 +76,7 @@ def compute(price, category, flag):
     else:
         return bundles
 
+# process and return specific bundles for chosen category
 def process(request, price, category):
     category = category.replace("_", " ")
 
@@ -98,6 +100,7 @@ def process(request, price, category):
 
     return HttpResponse(template.render(context, request))
 
+# process and return one random bundle for special offer
 def process_one(request, price, category):
 
     for key, value in categories_dict.items():
@@ -123,9 +126,8 @@ def process_one(request, price, category):
 
     return HttpResponse(template.render(context, request))
 
-
+# function imitates buy a bundle on Allegro
 def buy(request, id):
-    #print(id)
     out = []
     ids_split = id.split("a")
     for id_cat in ids_split:

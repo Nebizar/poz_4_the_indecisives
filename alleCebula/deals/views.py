@@ -6,6 +6,7 @@ from deals.models import Comment
 from alleCebula.authorization import post_to_page
 from django.contrib.auth.decorators import login_required
 
+# get items awarded by community from database - JS will display them
 def deals(request):
     template = loader.get_template('deals/index.html')
 
@@ -44,7 +45,7 @@ def details(request, id):
 
     return HttpResponse(template.render(context, request))
 
-
+# add cebulion method
 def add(request, id):
     product = Item.objects.get(pk=id)
     product.cebulions += 1
@@ -53,7 +54,7 @@ def add(request, id):
     return HttpResponse('')
     #
     
-
+# subtract cebulion method
 def sub(request, id):
     product = Item.objects.get(pk=id)
     product.cebulions -= 1

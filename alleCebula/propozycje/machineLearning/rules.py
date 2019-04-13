@@ -13,8 +13,7 @@ def read_data():
         reader = csv.reader(readFile)
         output = list(reader)
     
-        readFile.close()
-    #print(type(output))    
+        readFile.close()    
     return output
 
 # compute rules with apriori algorithm
@@ -38,7 +37,6 @@ def create_rules():
 
     data = read_data()
     rules = compute_rules(data)
-    #print(type(rules))
     results_list = []
     for i in range(0, len(rules)):
         results_list.append(list(rules[i][0]))
