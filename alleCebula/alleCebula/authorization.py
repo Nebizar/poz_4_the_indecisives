@@ -1,4 +1,4 @@
-from alleCebula.credentials import client_id, client_secret, fb_app_id, fb_app_secret, fb_page_id
+from alleCebula.credentials import client_id, client_secret, fb_app_id, fb_app_secret, fb_page_id, fb_access_token
 from base64 import b64encode
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import requests
@@ -46,19 +46,32 @@ def authorize_user(client_id, redirect_uri = REDIRECT_URI):
     return httpd.code
 
 
-def post_to_facebook(url):
-    graph = facebook.GraphAPI(access_token=fb_page_id, version="3.2")
+def login_to_facebook(url):
+    graph = facebook.GraphAPI(access_token=fb_access_token, version="3.2")
+    redirect_uri = REDIRECT_URI
+    perms = ["manage_pages", "publish_pages"]
+    fb_login_url = graph.get_auth_url(fb_app_id, redirect_uri, perms)
+    print(fb_login_url)
+    return
 
-    # Add a link and write a message about it.
-    graph.put_object(
-        parent_object="me",
-        connection_name="feed",
-        message="W tym tygodniu Order Cebuli goes to:",
-        link=url)
+def get_fb_auth(fb_access_token):
+    graph = facebook.GraphAPI(access_token=fb_access_token, version="3.2")
+    pages_data = graph.get_object("/me/accounts")
 
+    page_id = fb_page_id
+    page_token = None
 
+    for item in pages_data['data']:
+        if item['id'] == page_id':
+        page_token = item['access_token']
 
+    return page_token
 
+def post_to_page(page_token, message):
+    graph = facebook.GraphAPI(access_token=page_token)
+    status = graph.put_wall_ppst(message)
+    return status
 
 token = get_access_token(client_id, client_secret)
+page_token=get_fb_auth(fb_access_token)
 #user_code = authorize_user(client_id)
