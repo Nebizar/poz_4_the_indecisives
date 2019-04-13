@@ -25,7 +25,7 @@ def compute_rules(transactions):
 def add_new_data(new_data):
     with open('propozycje/machineLearning/shopping-data.csv', 'a', newline='') as csvFile:
         writer = csv.writer(csvFile)
-        writer.writerows(new_data)
+        writer.writerow(new_data)
         
     csvFile.close()
     
