@@ -30,7 +30,7 @@ def compute(price, category):
 
     cat_id = categories_dict[category]
     items = get_products_from_category(cat_id, num_products=items_per_category, max_price=base_price)
-    bundles_sample = []
+    bundles = []
     products = []
     bundles = []
     category_items=[]
@@ -39,7 +39,7 @@ def compute(price, category):
 
     for category in associated_categories:
         cat_id = categories_dict[category]
-        c_items= get_products_from_category(cat_id, max_price=max_price, num_products=items_per_category)
+        c_items= get_products_from_category(cat_id, max_price=base_price, num_products=items_per_category)
         category_items.append(c_items)
 
 
@@ -57,6 +57,7 @@ def compute(price, category):
                         break
                     if other_item["sellingMode"]["format"] == "BUY_NOW":
                         bundle_sample.append(other_item)
+                        bundles.append(bundle_sample)
                         for new_category in category_items:
                             another_items = new_category
                             i = 0
@@ -67,40 +68,9 @@ def compute(price, category):
                                 another_bundle_sample = [item, other_item]
                                 if another_item["sellingMode"]["format"] == "BUY_NOW":
                                     another_bundle_sample.append(another_item)
+                                    bundles.append(another_bundle_sample)
 
-    """for item in items:
-        seller_id=item["seller"]["id"]
-
-        if item["sellingMode"]["format"]=="BUY_NOW":
-            other_price=base_price-float(item["sellingMode"]["price"]["amount"])
-            for category in associated_categories:
-
-                cat_id=categories_dict[category]
-                other_items = get_products_from_category(cat_id, max_price=other_price, num_products=items_per_category)
-                j = 0
-                for other_item in other_items:
-                    bundle_sample = []
-                    bundle_sample.append(item)
-                    j += 1
-                    if j > 3:
-                        break
-                    if other_item["sellingMode"]["format"] == "BUY_NOW":
-                        bundle_sample.append(other_item)
-                        new_price = other_price - float(other_item["sellingMode"]["price"]["amount"])
-                        bundles_sample.append(bundle_sample)
-
-                        for new_category in associated_categories:
-                            cat_id = categories_dict[new_category]
-                            another_items = get_products_from_category(cat_id, max_price=new_price, num_products=items_per_category)
-                            i=0
-                            for another_item in another_items:
-                                i+=1
-                                if i > 3:
-                                    break
-                                another_bundle_sample=[item, other_item]
-                                if another_item["sellingMode"]["format"] == "BUY_NOW":
-                                    another_bundle_sample.append(another_item)"""
-    return bundles_sample
+    return bundles
 
 def process(request, price, category):
     bundles_sample = []
