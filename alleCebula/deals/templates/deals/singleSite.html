@@ -97,25 +97,29 @@
     </main>
 
     <div id="comments">
+
+        {% for comment in comments %}
         <div class="comment col-10 offset-1 row">
             <div class="userImage col-3">
                 <img src="https://png2.kisspng.com/sh/176419087d04548377ac2b380098971e/L0KzQYm3VcA5N5DBiZH0aYP2gLBuTgV0baMye9H2cIX3dcO0ifNwdqQyiAt8dHXwPbTvif5me5Yyj9t3ZD33ecXzhb1kd516hdC2NXHpQYW5VBZlO5JnTKo3M0e7RIa8VccyPWM6T6g5NkO8SIeATwBvbz==/kisspng-user-computer-icons-system-chinese-wind-title-column-5af1427fd3ab48.378455571525760639867.png">
-                <p class="username">
-                    Kamil
-                </p>
+                <p class="username">{{comment.nick}}</p>
             </div>
             <div class="comment col-9">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, at, illo esse eveniet reiciendis tempora nam nemo quae architecto natus vero impedit molestias. Architecto quaerat, dolor adipisci modi perferendis laudantium quo qui aliquid cum ducimus. Aspernatur cupiditate magni mollitia voluptas ullam repudiandae neque similique aperiam pariatur nobis nisi blanditiis alias delectus velit, esse ad ex, minus labore enim minima! Dolores laudantium reiciendis rerum vel pariatur adipisci quibusdam nemo iusto, nostrum nesciunt, reprehenderit porro. Consequuntur, qui, aperiam dicta modi ullam odit tempora est eos pariatur magni quos totam nesciunt voluptatem corrupti! Nihil harum aperiam ut doloremque reiciendis! Esse similique illo laboriosam.</p>
+                <p>{{comment.content}}</p>
             </div>
         </div>
+        {%endfor%}
 
 
         <div id="addComment" class="col-10 offset-1">
-            <form action="#">
+            <form action="." method="POST">
+                    <fieldset>
+                    {% csrf_token %}
                 <input type="text" name="firstname" placeholder="Twoje imię"><br>
                 
-                <textarea rows="4" placeholder="Podziel się swoją opinią"></textarea>
+                <textarea rows="4" name="comment" placeholder="Podziel się swoją opinią"></textarea>
                 <input type="submit" value="Wyślij">
+                </fieldset>
             </form>
         </div>
     </div>

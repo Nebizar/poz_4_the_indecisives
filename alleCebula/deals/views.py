@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from deals.models import Item
+from deals.models import Comment
 
 def deals(request):
     template = loader.get_template('deals/index.html')
@@ -25,12 +26,28 @@ def deals(request):
     return HttpResponse(template.render(context, request))
 
 def details(request, id):
-    template = loader.get_template('deals/singleSite.html')
 
+    if request.method == 'POST':
+        print('POSTE')
+        com = request.POST.get( 'comment', '')
+        name = request.POST.get( 'firstname' , '')
+
+        comment = Comment(
+            product_id = Item.objects.get(pk=id),
+            content = com,
+            nick = name
+            )
+
+        comment.save()
+
+    template = loader.get_template('deals/singleSite.html')
     product = Item.objects.get(pk=id)
 
+    comments = Comment.objects.filter(product_id=product)
+
     context = {
-        'product': product
+        'product': product,
+        'comments': comments
     }
 
     return HttpResponse(template.render(context, request))
