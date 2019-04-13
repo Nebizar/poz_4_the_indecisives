@@ -71,8 +71,8 @@ def get_fb_auth(fb_access_token):
 """
 
 def post_to_page(message):
-    message = message.replace(' ', '\%20')
-    message = message.replace('\n', '\%0A')
+    message = message.replace(' ', '%20')
+    message = message.replace('\n', '%0A')
     r = requests.post("https://graph.facebook.com/v3.2/2121524784551397/feed?message="+message+"&access_token="+fb_access_token)
 
     print('----------------------')

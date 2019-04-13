@@ -72,7 +72,7 @@ def post_to_facebook(request, id):
 
     url = 'http://localhost:8000/deals/'+id+'/'
 
-    message = url + '\n' + 'YOYOYOYOYYOYOYO WOOOOOOOOO ' + str(cebulki) + '\n'
+    message = url + '\n' + 'Cebula dnia, która ogrzeje Twoje serce! Liczba cebulionów: ' + str(cebulki) + '\n'
 
 
     post_to_page(message)
