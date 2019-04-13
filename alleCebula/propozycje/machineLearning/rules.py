@@ -41,9 +41,11 @@ def create_rules():
 
 def get_associated_categories(rules_list, chosen_cat):
     categories = []
+    print("Dla mojego kolegi z dedykacja:"+chosen_cat)
     for rule in rules_list:
         if chosen_cat in rule:
             categories += rule
     c_copy = set(categories)
+    print("ccopy",c_copy)
     c_copy.remove(chosen_cat)
     return list(c_copy)

@@ -78,7 +78,7 @@ def compute(price, category, flag):
         return bundles
 
 def process(request, price, category):
-    category = category.replace("\%20", " ")
+    category = category.replace("_", " ")
     bundles_sample = []
     bundles = []
 

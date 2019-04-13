@@ -132,7 +132,7 @@
     $('#getNew').click(function(){
         var category = $('#searchBar select').val();
         var price = $('#myValue').html();
-        $.get('process/'+category+'/' + price + '/', function(data){
+        $.get('process/'+category.replace(/ /g, '_')+'/' + price + '/', function(data){
             $('main').html(data);
             initialise();
         });
