@@ -24,7 +24,9 @@
                         </div>
                         <div class="rank row col-6 p-0 ">
                             <p class="score col-6">{{product.cebulions}}</p>
-                            <div class="happy col-6 mt-1">
+
+                            <div class="happy re col-6 mt-1">
+
                                 <img src="{% static 'onion.png' %}">
                             </div>
                         </div>
@@ -43,20 +45,15 @@
             {%endfor%}
         </div>
     </main>
-
-
-
-
-
-
     <script>
         function sadFacesEverywhereSoSadImSoAlone(){
-            $('.onionrank .rank').each(function(){
+
+            $('.product').each(function(){
                 var score = $(this).find('.score').html()
                 if(score < 0){
-                    $(this).find('.happy img').attr('src', '/deals/static/sadOnion.png')
+                    $(this).find('.happy.re img').attr('src', "{% static 'sadOnion.png' %}")
                 }else{
-                    $(this).find('.happy img').attr('src', '/deals/static/onion.jpg')
+                    $(this).find('.happy.re img').attr('src', "{% static 'onion.png' %}")
                 }
             })
         }
@@ -73,7 +70,7 @@
                     me.parent().children().hide();
 
                     sessionStorage.setItem(myid,"1");
-                
+                    sadFacesEverywhereSoSadImSoAlone()
                 })
             })
 
@@ -86,7 +83,7 @@
                     me.parent().children().hide();
 
                     sessionStorage.setItem(myid,"1");
-                    
+                    sadFacesEverywhereSoSadImSoAlone()
                 })
             })
         })

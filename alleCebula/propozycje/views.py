@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from propozycje.machineLearning.rules import create_rules, get_associated_categories, add_new_data
-from alleCebula.productgetter import get_products_from_category, get_products_from_seller
+from alleCebula.productgetter import get_products_from_category
 from propozycje.machineLearning.item_generator import categories_dict
-from alleCebula.itemyZosi import bundle_to_array, shuffle_bundles, shuffle_bundles_one, get_total_price, price_ok
+from alleCebula.itemyZosi import bundle_to_array, shuffle_bundles, shuffle_bundles_one, price_ok
 from django.http import HttpResponse
 from django.template import loader
 import numpy as np

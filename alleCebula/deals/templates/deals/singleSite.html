@@ -41,7 +41,7 @@
                 </div>
                 <div class="rank row col-6 p-0 ">
                     <p class=" score col-6">{{product.cebulions}}</p>
-                    <div class="happy col-6">
+                    <div class="happy re col-6">
                         <img src="{% static 'onion.png' %}">
                     </div>
                 </div>
@@ -136,10 +136,20 @@
 
         
 
+        function sadFacesEverywhereSoSadImSoAlone(){
+            $('.singleDescription').each(function(){
+                var score = $(this).find('.score').html()
+                if(score < 0){
+                    $(this).find('.happy.re img').attr('src', "{% static 'sadOnion.png' %}")
+                }else{
+                    $(this).find('.happy.re img').attr('src', "{% static 'onion.png' %}")
+                }
+            })
+        }
         
 
         $(document).ready(function(){
-           
+            sadFacesEverywhereSoSadImSoAlone()
             var category = $('#singleProduct').attr('category');
             var price = parseInt(parseFloat($('#pp').html().replace(',','.').replace(' ','')));
            
