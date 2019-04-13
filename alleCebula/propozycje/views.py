@@ -2,7 +2,7 @@ from django.shortcuts import render
 from propozycje.machineLearning.rules import create_rules, get_associated_categories, add_new_data
 from alleCebula.productgetter import get_products_from_category, get_products_from_seller
 from propozycje.machineLearning.item_generator import categories_dict
-from alleCebula.itemyZosi import bundle_to_array, shuffle_bundles, xd
+from alleCebula.itemyZosi import bundle_to_array, shuffle_bundles, shuffle_bundles_one
 from django.http import HttpResponse
 from django.template import loader
 
@@ -18,7 +18,7 @@ def propositions(request):
 
     return HttpResponse(template.render(context, request))
 
-def process(request, price, category):
+def compute(price, category):
     #get data from API and machine learning stuff
     rules = create_rules()
     base_price = float(price)
@@ -71,7 +71,13 @@ def process(request, price, category):
                                     another_bundle_sample.append(another_item)
                                     bundles_sample.append(another_bundle_sample)
 
+    return bundles_sample
 
+def process(request, price, category):
+    bundles_sample = []
+    bundles = []
+
+    bundles_sample = compute(price, category)
 
     template = loader.get_template('propozycje/zero/productList.html')
 
@@ -82,35 +88,27 @@ def process(request, price, category):
         products = bundle_to_array(bundle)
         bundles.append(products)
 
-
-    """
-    products = [
-            {
-                'name': 'opona',
-                'price': '125 zł',
-                'image': 'https://a.allegroimg.com/s1024/01100e/9c869ebe48129822b1605ecd4605'
-            },
-            {
-                'name': 'opona',
-                'price': '125 zł',
-                'image': 'https://a.allegroimg.com/s1024/01100e/9c869ebe48129822b1605ecd4605'
-            },
-            {
-                'name': 'opona',
-                'price': '125 zł',
-                'image': 'https://a.allegroimg.com/s1024/01100e/9c869ebe48129822b1605ecd4605'
-            }
-    ]
-    """
-    """
-    bundle = {
-        'id': 'abc',
-        'products': products
+    context = {
+        'bundles': bundles
     }
 
+    return HttpResponse(template.render(context, request))
+
+def process_one(request, price, category):
+    bundles_sample = []
     bundles = []
-    bundles.append(bundle)
-    """
+
+    bundles_sample = compute(price, category)
+
+    template = loader.get_template('propozycje/zero/productList.html')
+
+    bundles_shuffled = []
+    bundles_shuffled = shuffle_bundles_one(bundles_sample)
+
+    for bundle in bundles_shuffled:
+        products = bundle_to_array(bundle)
+        bundles.append(products)
+
     context = {
         'bundles': bundles
     }

@@ -52,6 +52,10 @@ def shuffle_bundles(bundles):
     random.shuffle(bundles)
     return bundles[:10]
 
+def shuffle_bundles_one(bundles):
+    random.shuffle(bundles)
+    return bundles[0]
+
 
 
 def xd(items, associated_categories, items_per_category, max_price):
