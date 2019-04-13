@@ -67,7 +67,7 @@ def get_fb_auth(fb_access_token):
 
     return page_token
 
-def post_to_page(page_token, message):
+def post_to_page(message):
     graph = facebook.GraphAPI(access_token=page_token)
     status = graph.put_wall_ppst(message)
     return status
