@@ -125,9 +125,16 @@
         $(document).ready(function(){
             var category = $('#singleProduct').attr('category');
             var price = parseInt(parseFloat($('#pp').html().replace(',','.').replace(' ','')));
-
-            $.get('/propozycje/process/single/'+category+'/'+ (price*3) + '/', function(data){
-                $('#productList').html(data);
+           
+            $.get({
+                url: '/propositions/process/single/'+category+'/'+ (price*3) + '/',
+                success: function(data){
+                    console.log('sadadasd'+data);
+                    $('#productList').html(data);
+                },
+                error: function(){
+                    console.log('error');
+                }
             })
         })
     </script>

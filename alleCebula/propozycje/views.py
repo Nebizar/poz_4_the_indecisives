@@ -18,11 +18,15 @@ def propositions(request):
 
     return HttpResponse(template.render(context, request))
 
-def compute(price, category):
+def compute(price, category, flag):
+    print('Price: ' + price)
+    print('Category: ' + category)
     #get data from API and machine learning stuff
     rules = create_rules()
+    #print(rules)
     base_price = float(price)
     associated_categories= get_associated_categories(rules, category)
+    #print(associated_categories)
 
     items_number = 50
     category_number = len(associated_categories)
@@ -30,6 +34,7 @@ def compute(price, category):
 
     cat_id = categories_dict[category]
     items = get_products_from_category(cat_id, num_products=items_per_category, max_price=base_price)
+    #print(items)
     bundles = []
     products = []
     bundles = []
@@ -53,6 +58,10 @@ def compute(price, category):
                     if other_item["sellingMode"]["format"] == "BUY_NOW" and price_ok(bundle_sample, other_item, base_price):
                         bundle_sample.append(other_item)
                         bundles.append(bundle_sample)
+
+                        #if(len(bundles) > 1000):
+                        #    return bundles
+
                         for new_category in category_items:
                             another_items = new_category
                             for another_item in another_items:
@@ -61,7 +70,12 @@ def compute(price, category):
                                     another_bundle_sample.append(another_item)
                                     bundles.append(another_bundle_sample)
 
-    return bundles
+                                    #if(len(bundles) > 1000):
+                                    #    return bundles
+    if flag:
+        return [bundles[0]]
+    else:
+        return bundles
 
 def process(request, price, category):
     for key, value in categories_dict.items():
@@ -72,7 +86,7 @@ def process(request, price, category):
     bundles_sample = []
     bundles = []
 
-    bundles_sample = compute(price, category)
+    bundles_sample = compute(price, category, False)
 
     template = loader.get_template('propozycje/zero/productList.html')
 
@@ -90,14 +104,20 @@ def process(request, price, category):
     return HttpResponse(template.render(context, request))
 
 def process_one(request, price, category):
+
     for key, value in categories_dict.items():
         if value == category:
             category = key
             break
+
+    
     bundles_sample = []
     bundles = []
 
-    bundles_sample = compute(price, category)
+    print('before sample')
+    bundles_sample = compute(price, category, True)
+
+    print(bundles_sample)
 
     template = loader.get_template('propozycje/zero/singleList.html')
 

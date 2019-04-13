@@ -64,7 +64,7 @@ def shuffle_bundles(bundles):
 
 def shuffle_bundles_one(bundles):
     random.shuffle(bundles)
-    return bundles[0]
+    return [bundles[0]]
 
 
 
