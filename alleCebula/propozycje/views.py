@@ -24,7 +24,7 @@ def compute(price, category):
     base_price = float(price)
     associated_categories= get_associated_categories(rules, category)
 
-    items_number = 10
+    items_number = 50
     category_number = len(associated_categories)
     items_per_category = items_number // category_number
 
@@ -48,22 +48,14 @@ def compute(price, category):
         if item["sellingMode"]["format"] == "BUY_NOW":
             for category in category_items:
                 other_items=category
-                j = 0
                 for other_item in other_items:
                     bundle_sample = [item]
-                    j += 1
-                    if j > 3:
-                        break
                     if other_item["sellingMode"]["format"] == "BUY_NOW" and price_ok(bundle_sample, other_item, base_price):
                         bundle_sample.append(other_item)
                         bundles.append(bundle_sample)
                         for new_category in category_items:
                             another_items = new_category
-                            i = 0
                             for another_item in another_items:
-                                i += 1
-                                if i > 3:
-                                    break
                                 another_bundle_sample = [item, other_item]
                                 if another_item["sellingMode"]["format"] == "BUY_NOW" and price_ok(another_bundle_sample, another_item, base_price) and another_item["category"]["id"] != other_item["category"]["id"]:
                                     another_bundle_sample.append(another_item)
