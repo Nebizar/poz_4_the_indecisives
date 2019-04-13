@@ -1,6 +1,9 @@
 
-{% for product in products %}
-    <div class="allegroProduct col-md-4 mt-5">
+{% for bundle in bundles %}
+<span class="bundle row">
+{% for product in bundle.products %}
+
+    <div class="allegroProduct col-md-4 mt-2 mb-2">
         <div class="poss col-12 h-100 p-0">
             <a href="https://a.allegroimg.com/s1024/01100e/9c869ebe48129822b1605ecd4605" target="_blank">
                 <img src="{{product.image}}">
@@ -11,4 +14,12 @@
             </div>
         </div>
     </div>
+
+{% endfor %}
+
+<div class="buyBundle" itemid="{{bundle.id}}">
+    KUP
+</div>
+
+</span>
 {% endfor %}

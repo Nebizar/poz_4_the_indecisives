@@ -56,26 +56,41 @@ def process(request, price, category):
 
     template = loader.get_template('propozycje/zero/productList.html')
 
-    """products = [
-        {
-            'name': 'opona',
-            'price': '125 zł',
-            'image': 'https://a.allegroimg.com/s1024/01100e/9c869ebe48129822b1605ecd4605'
-        },
-        {
-            'name': 'opona',
-            'price': '125 zł',
-            'image': 'https://a.allegroimg.com/s1024/01100e/9c869ebe48129822b1605ecd4605'
-        },
-        {
-            'name': 'opona',
-            'price': '125 zł',
-            'image': 'https://a.allegroimg.com/s1024/01100e/9c869ebe48129822b1605ecd4605'
-        }
-    ]"""
+    """
+    products = [
+            {
+                'name': 'opona',
+                'price': '125 zł',
+                'image': 'https://a.allegroimg.com/s1024/01100e/9c869ebe48129822b1605ecd4605'
+            },
+            {
+                'name': 'opona',
+                'price': '125 zł',
+                'image': 'https://a.allegroimg.com/s1024/01100e/9c869ebe48129822b1605ecd4605'
+            },
+            {
+                'name': 'opona',
+                'price': '125 zł',
+                'image': 'https://a.allegroimg.com/s1024/01100e/9c869ebe48129822b1605ecd4605'
+            }
+    ]
+    """
 
-    context = {
+    bundle = {
+        'id': 'abc',
         'products': products
     }
 
+    bundles = []
+    bundles.append(bundle)
+
+    context = {
+        'bundles': bundles
+    }
+
     return HttpResponse(template.render(context, request))
+
+
+def buy(request, id):
+    print(id)
+    return HttpResponse('')

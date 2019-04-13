@@ -50,6 +50,29 @@
             margin: 0px;
             padding: 0px;
         }
+        #plus, #minus{
+            cursor: pointer;
+        }
+        .bundle{
+            margin-top: 50px;
+            border: 3px solid #333333;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            position: relative;
+        }
+        .buyBundle{
+            position: absolute;
+            bottom: 10px;
+            right: 40px;
+            background-color: #ff5a00;
+            color: white;
+            height: 50px;
+            line-height: 50px;
+            width: 100px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -66,9 +89,9 @@
     <div id="value" class="row col-12 offset-0 align-items-center">
         <div class="value col-lg-6 offset-lg-3 col-8 offset-2">
             <p>
-                <img src="https://image.flaticon.com/icons/svg/54/54351.svg">
+                <img id="minus" src="https://image.flaticon.com/icons/svg/54/54351.svg">
                 <span id="myValue">400</span> zł
-                <img src="https://image.flaticon.com/icons/png/512/70/70526.png">
+                <img id="plus" src="https://image.flaticon.com/icons/png/512/70/70526.png">
             </p>
         </div>
     </div>
@@ -79,7 +102,7 @@
     </main>
 
     <div id="getNew" class="col-lg-4 offset-lg-4 col-6 offset-3">
-        <p>Więcej</p>
+        <p>Pokaż</p>
     </div>
 </body>
 
@@ -91,6 +114,16 @@
             $(this).children('.poss').children('.details').stop().slideDown();
         }, function(){
             $(this).children('.poss').children('.details').stop().slideUp();
+        })
+
+        $('.buyBundle').click(function(){
+            var id = $(this).attr('itemid');
+            me = $(this);
+            $.get('buy/'+id+'/', function(data){
+                alert("Kupiłeś produkt");
+               me.parent('.bundle').slideUp(500);
+            });
+            return false;
         })
     } 
 
@@ -104,6 +137,16 @@
             initialise();
         });
     })
+
+    $("#plus").click(function(){
+        $('#myValue').html(parseInt($('#myValue').html()) + 50);
+    })
+
+    $("#minus").click(function(){
+        $('#myValue').html(parseInt($('#myValue').html()) - 50);
+    })
+
+    
 
 </script>
 </html>
