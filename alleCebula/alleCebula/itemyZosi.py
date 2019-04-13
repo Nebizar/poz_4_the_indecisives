@@ -63,8 +63,8 @@ def bundle_to_array(bundle):
 
 
 def shuffle_bundles(bundles):
-    b= random.shuffle(bundles)
-    return b[:10]
+    random.shuffle(bundles)
+    return bundles[:10]
 
 
 

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from propozycje.machineLearning.rules import create_rules, get_associated_categories, add_new_data
 from alleCebula.productgetter import get_products_from_category, get_products_from_seller
 from propozycje.machineLearning.item_generator import categories_dict
-from alleCebula.itemyZosi import bundle_to_array, process_xd
+from alleCebula.itemyZosi import bundle_to_array, process_xd, shuffle_bundles
 from django.http import HttpResponse
 from django.template import loader
 
@@ -31,9 +31,8 @@ def process(request, price, category):
     cat_id = categories_dict[category]
     items = get_products_from_category(cat_id, num_products=items_per_category, max_price=base_price)
     bundles=[]
+    bundles_sample = []
     products = []
-    bundles=process_xd(items, associated_categories, base_price, items_per_category)
-    print(bundles)
 
     for item in items:
         seller_id=item["seller"]["id"]
@@ -50,11 +49,17 @@ def process(request, price, category):
                     if other_item["sellingMode"]["format"] == "BUY_NOW":
                         bundle_sample.append(other_item)
                         new_price = other_price - float(other_item["sellingMode"]["price"]["amount"])
-                        products = bundle_to_array(bundle_sample)
-                        bundles.append(products)
+                        bundles_sample.append(bundle_sample)
 
 
     template = loader.get_template('propozycje/zero/productList.html')
+
+    bundles_shuffled = []
+    bundles_shuffled = shuffle_bundles(bundles_sample)
+
+    for bundle in bundles_shuffled:
+        products = bundle_to_array(bundle)
+        bundles.append(products)
 
 
     """
