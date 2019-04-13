@@ -9,7 +9,7 @@ import numpy as np
 
 def propositions(request):
     template = loader.get_template('propozycje/zero/index.html')
-    #TODO zamienic na wlasciwe kategorie
+    
     categories = {'myszki','klawiatury','pady','piloty','joysticki','tablety graficzne','monitory','dyski zewnetrzne i przenosne',
         'pendrive','sledzie','kamery internetowe','zestawy i kamery do wideokonferencji','gogle VR','glosniki','mikrofony i sluchawki'}
 
@@ -20,8 +20,6 @@ def propositions(request):
     return HttpResponse(template.render(context, request))
 
 def compute(price, category, flag):
-    print('Price: ' + price)
-    print('Category: ' + category)
     #get data from API and machine learning stuff
     rules = create_rules()
     #print(rules)
@@ -79,7 +77,7 @@ def compute(price, category, flag):
 
 def process(request, price, category):
     category = category.replace("_", " ")
-    print("Dlugosc: ",len(category))
+
     bundles_sample = []
     bundles = []
 

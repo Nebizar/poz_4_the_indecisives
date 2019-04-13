@@ -6,6 +6,8 @@ Created on Fri Apr 12 20:21:17 2019
 """
 
 import csv
+
+# read csv file with data for Apriori
 def read_data():
     with open('propozycje/machineLearning/shopping-data.csv', 'r') as readFile:
         reader = csv.reader(readFile)
@@ -15,6 +17,7 @@ def read_data():
     #print(type(output))    
     return output
 
+# compute rules with apriori algorithm
 def compute_rules(transactions):
     from propozycje.machineLearning.apyori import apriori
     rules = apriori(transactions, min_support = round((len(transactions)**(1/1024)) - 1 , 3),
@@ -22,13 +25,15 @@ def compute_rules(transactions):
     results = list(rules)
     return results
 
+# add new data during app lifespan
 def add_new_data(new_data):
     with open('propozycje/machineLearning/shopping-data.csv', 'a', newline='') as csvFile:
         writer = csv.writer(csvFile)
         writer.writerow(new_data)
         
     csvFile.close()
-    
+
+# extract rules from apriori    
 def create_rules():
 
     data = read_data()
@@ -39,15 +44,12 @@ def create_rules():
         results_list.append(list(rules[i][0]))
     return results_list
 
+# get associations for chosen category
 def get_associated_categories(rules_list, chosen_cat):
     categories = []
-    print("Dla mojego kolegi z dedykacja:"+chosen_cat)
     for rule in rules_list:
-        print(rule)
         if chosen_cat in rule:
             categories += rule
-            print(categories)
     c_copy = set(categories)
-    print("ccopy",list(c_copy))
     c_copy.discard(chosen_cat)
     return list(c_copy)
