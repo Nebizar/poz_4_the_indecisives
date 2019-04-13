@@ -42,4 +42,39 @@
             {%endfor%}
         </div>
     </main>
+
+
+
+
+
+
+    <script>
+        $(document).ready(function(){
+            $('.sad').click(function(){
+                var myid = $(this).parents('.product').attr('itemid');
+                var me = $(this)
+                $.get('sub/' + myid +'/', function(data){
+                    var score = me.parents('.top').find('.score');
+                    score.html(parseInt(score.html()) - 1)
+                    me.parent().children().hide();
+
+                    sessionStorage.setItem(myid,"1");
+                
+                })
+            })
+
+            $('.happy').click(function(){
+                var myid = $(this).parents('.product').attr('itemid');
+                var me = $(this)
+                $.get('add/' + myid +'/', function(data){
+                    var score = me.parents('.top').find('.score');
+                    score.html(parseInt(score.html()) + 1)
+                    me.parent().children().hide();
+
+                    sessionStorage.setItem(myid,"1");
+                    
+                })
+            })
+        })
+    </script>
 {% endblock %}
