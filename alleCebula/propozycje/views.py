@@ -2,7 +2,7 @@ from django.shortcuts import render
 from propozycje.machineLearning.rules import create_rules, get_associated_categories, add_new_data
 from alleCebula.productgetter import get_products_from_category, get_products_from_seller
 from propozycje.machineLearning.item_generator import categories_dict
-from alleCebula.itemyZosi import bundle_to_array, shuffle_bundles, shuffle_bundles_one, get_total_price
+from alleCebula.itemyZosi import bundle_to_array, shuffle_bundles, shuffle_bundles_one, get_total_price, price_ok
 from django.http import HttpResponse
 from django.template import loader
 
@@ -50,12 +50,11 @@ def compute(price, category):
                 other_items=category
                 j = 0
                 for other_item in other_items:
-                    bundle_sample = []
-                    bundle_sample.append(item)
+                    bundle_sample = [item]
                     j += 1
                     if j > 3:
                         break
-                    if other_item["sellingMode"]["format"] == "BUY_NOW":
+                    if other_item["sellingMode"]["format"] == "BUY_NOW" and price_ok(bundle_sample, other_item, base_price):
                         bundle_sample.append(other_item)
                         bundles.append(bundle_sample)
                         for new_category in category_items:
@@ -66,7 +65,7 @@ def compute(price, category):
                                 if i > 3:
                                     break
                                 another_bundle_sample = [item, other_item]
-                                if another_item["sellingMode"]["format"] == "BUY_NOW":
+                                if another_item["sellingMode"]["format"] == "BUY_NOW" and price_ok(another_bundle_sample, another_item, base_price):
                                     another_bundle_sample.append(another_item)
                                     bundles.append(another_bundle_sample)
 

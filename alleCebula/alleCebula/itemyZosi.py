@@ -3,6 +3,16 @@ import random
 from alleCebula.productgetter import get_products_from_category
 from propozycje.machineLearning.item_generator import categories_dict
 
+def price_ok(bundle, new_item, max_price):
+    result = True
+    total_price=float(new_item["sellingMode"]["price"]["amount"])
+    for item in bundle:
+        total_price+=float(item["sellingMode"]["price"]["amount"])
+        if total_price > max_price:
+            result=False
+            break
+    return result
+
 def get_total_price(bundle):
     price=0.0
     #for item in bundle:
