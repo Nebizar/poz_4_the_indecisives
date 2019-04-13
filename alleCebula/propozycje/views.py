@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from propozycje.machineLearning.rules import create_rules, get_associated_categories
+from propozycje.machineLearning.rules import create_rules, get_associated_categories, add_new_data
 from alleCebula.productgetter import get_products_from_category, get_products_from_seller
 from propozycje.machineLearning.item_generator import categories_dict
 from alleCebula.itemyZosi import bundle_to_array, process_xd
@@ -92,5 +92,12 @@ def process(request, price, category):
 
 
 def buy(request, id):
-    print(id)
+    #print(id)
+    out = []
+    ids_split = id.split("a")
+    for id_cat in ids_split:
+        for name, cat in categories_dict.items():
+            if cat == id_cat:
+                out.append(name)
+    add_new_data(out)
     return HttpResponse('')
