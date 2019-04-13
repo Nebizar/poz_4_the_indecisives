@@ -1,0 +1,123 @@
+
+
+{%extends 'deals/layout.html' %}
+
+
+{% load static %}
+
+{% block extras %}
+    <link href="{% static 'single.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content%}
+
+    <div id="singleProduct" class=" col-10 offset-1 row">
+        <div class="singleProductImage col-md-6">
+            <img src="{{product.picture}}">
+        </div>
+
+        <div class="singleDescription col-md-6">
+            <h2>
+                {{product.name}}
+            </h2>
+            <div class="details">
+                <p>{{product.price}}</p>
+            </div>
+            <div class="onionRank row">
+                <div class="choose col-6 row align-items-center p-1">
+                    <div class="sad col-6 p-1">
+                        <img src="{% static 'sadOnion.png' %}">
+                    </div>
+                    <div class="happy col-6 p-1">
+                        <img src="{% static 'onion.png' %}">
+                    </div>
+                </div>
+                <div class="rank row col-6 p-0 ">
+                    <p class="col-6">{{product.cebulions}}</p>
+                    <div class="happy col-6">
+                        <img src="{% static 'onion.png' %}">
+                    </div>
+                </div>
+            </div>
+            <div class="goTo">
+                <p>Aukcja</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <main>
+        
+        <div id="productList" class="col-10 offset-1 row">
+            <h2 class="w-100">Lepiej w zestawie</h2>
+
+            <div class="product col-md-4">
+                <div class="top row">
+
+                </div>
+                <div class="productImage">
+                    <img src="https://b.allegroimg.com/s1440/0340c8/af8af9cb4af1bbee95e79fd27cdb">
+                </div>
+                <div class="info">
+                    <p>Odkurzacz automatyczny iRobot Roomba 980</p>
+                    <p>3 480,00</p>
+                </div>
+            </div>
+
+            <div class="product col-md-4">
+                <div class="top row">
+
+                </div>
+                <div class="productImage">
+                    <img src="https://b.allegroimg.com/s1440/0340c8/af8af9cb4af1bbee95e79fd27cdb">
+                </div>
+                <div class="info">
+                    <p>Odkurzacz automatyczny iRobot Roomba 980</p>
+                    <p>3 480,00</p>
+                </div>
+            </div>
+
+            <div class="product col-md-4">
+                <div class="top row">
+                    
+                </div>
+                <div class="productImage">
+                    <img src="https://b.allegroimg.com/s1440/0340c8/af8af9cb4af1bbee95e79fd27cdb">
+                </div>
+                <div class="info">
+                    <p>Odkurzacz automatyczny iRobot Roomba 980</p>
+                    <p>3 480,00</p>
+                </div>
+            </div>
+            
+            <div id="buy" class="col-md-3 offset-md-9 mt-md-5 mt-md-0 mt-5">
+                <p>Kup zestaw</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="comments">
+        <div class="comment col-10 offset-1 row">
+            <div class="userImage col-3">
+                <img src="https://png2.kisspng.com/sh/176419087d04548377ac2b380098971e/L0KzQYm3VcA5N5DBiZH0aYP2gLBuTgV0baMye9H2cIX3dcO0ifNwdqQyiAt8dHXwPbTvif5me5Yyj9t3ZD33ecXzhb1kd516hdC2NXHpQYW5VBZlO5JnTKo3M0e7RIa8VccyPWM6T6g5NkO8SIeATwBvbz==/kisspng-user-computer-icons-system-chinese-wind-title-column-5af1427fd3ab48.378455571525760639867.png">
+                <p class="username">
+                    Kamil
+                </p>
+            </div>
+            <div class="comment col-9">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, at, illo esse eveniet reiciendis tempora nam nemo quae architecto natus vero impedit molestias. Architecto quaerat, dolor adipisci modi perferendis laudantium quo qui aliquid cum ducimus. Aspernatur cupiditate magni mollitia voluptas ullam repudiandae neque similique aperiam pariatur nobis nisi blanditiis alias delectus velit, esse ad ex, minus labore enim minima! Dolores laudantium reiciendis rerum vel pariatur adipisci quibusdam nemo iusto, nostrum nesciunt, reprehenderit porro. Consequuntur, qui, aperiam dicta modi ullam odit tempora est eos pariatur magni quos totam nesciunt voluptatem corrupti! Nihil harum aperiam ut doloremque reiciendis! Esse similique illo laboriosam.</p>
+            </div>
+        </div>
+
+
+        <div id="addComment" class="col-10 offset-1">
+            <form action="#">
+                <input type="text" name="firstname" placeholder="Twoje imię"><br>
+                
+                <textarea rows="4" placeholder="Podziel się swoją opinią"></textarea>
+                <input type="submit" value="Wyślij">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

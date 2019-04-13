@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+        {% load static %}
+
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Anton|Open+Sans" rel="stylesheet">
+
+    <!--jQuery-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link href="{% static 'onion.css' %}" rel="stylesheet" type="text/css">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {%block extras%}
+    {%endblock%}
+
+    <title>AlleCebula</title>
+</head>
+<body>
+    <header>
+        <div id="headBar">
+
+        </div>
+
+        <a href="/deals/">
+            <div id="logo" class="col-10 offset-1 row  align-items-center">
+                <div class="logoImg col-md-1">
+                    <img src="https://cdn.shopify.com/s/files/1/2040/0303/products/Cute_Happy_Healthy_Vegetable_Food_Cartoon_Emoji_-_Onion_523292519_grande.jpg?v=1515813145">
+                </div>
+                <h1 class="col-md-2 mt-lg-0 mt-5">AlleCebula</h1>
+            </div>
+        </a>
+    </header>
+
+    {%block content%}
+
+    {%endblock%}
+
+    <footer>
+    </footer>
+</body>
+
+
+<script>
+
+    $('.sad').click(function(){
+        var myid = $(this).parents('.product').attr('itemid');
+        alert(myid)
+    })
+
+    $('.happy').click(function(){
+        
+    })
+</script>
+</html>

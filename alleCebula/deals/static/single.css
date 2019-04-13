@@ -1,0 +1,80 @@
+h1{
+    font-size: 35px;
+}
+#logo{
+    margin-top: 50px;
+}
+#singleProduct{
+    margin-top: 50px;
+}
+h2{
+    font-size: 20px;
+}
+.goTo{
+    background-color: #ff5a00;
+    width: 100%;
+    color: white;
+    padding: 12px;
+}
+.goTo p{
+    line-height: 20px;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+    text-align: center;
+}
+#singleProduct .choose img:hover{
+    border: 3px solid white;
+}
+.rank p{
+    color: black;
+}
+.rank{
+    margin-bottom: 30px;
+}
+#productList h2{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+.product{
+    margin-top:30px;
+}
+
+#productList{
+    overflow: hidden;
+}
+#comments{
+    margin-top: 120px;
+}
+.username{
+    text-align: center;
+    margin-top: 20px;
+}
+#addComment{
+    margin-top: 100px;
+}
+#addComment input, #addComment textarea{
+    margin-top: 20px;
+    width: 100%;
+}
+
+.product .top{
+    height: 30px;
+}
+
+.product{
+    height: 300px;
+}
+
+#buy{
+    background-color: #ff5a00;
+}
+#buy p{
+    line-height: 40px;
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}

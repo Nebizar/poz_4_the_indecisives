@@ -1,0 +1,45 @@
+
+
+{%extends 'deals/layout.html' %}
+
+{% load static %}
+{%block content%}
+    <main>
+        <div id="productList" class="col-10 offset-1 row">
+
+
+            {%for product in products %}
+            
+                <div class="product col-lg-3 col-md-4" itemid="{{product.id}}">
+                    
+                    <div class="top row">
+                        <div class="choose col-6 row align-items-center p-1">
+                            <div class="sad col-6 p-1">
+                                <img src="{% static 'sadOnion.png' %}">
+                            </div>
+                            <div class="happy col-6 p-1">
+                                <img src="{% static 'onion.png' %}">
+                            </div>
+                        </div>
+                        <div class="rank row col-6 p-0 ">
+                            <p class="col-6">{{product.cebulions}}</p>
+                            <div class="happy col-6">
+                                <img src="{% static 'onion.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{{product.id}}/">
+                        <div class="productImage">
+                            <img src="{{product.picture}}">
+                        </div>
+                    </a>
+                    <div class="info">
+                        <p>{{product.name}}</p>
+                        <p>{{product.price}} Zł</p>
+                    </div>
+                </div>
+            
+            {%endfor%}
+        </div>
+    </main>
+{% endblock %}

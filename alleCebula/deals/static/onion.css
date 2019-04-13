@@ -1,0 +1,105 @@
+body{
+    padding-top: 50px;
+}
+p,a{
+    font-family: 'Open Sans';
+}
+h1, h2, h3{
+    font-family: Anton;
+}
+#headBar{
+    height: 50px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: #ff5a00;
+    z-index: 200;
+}
+img{
+    width: 100%;
+}
+#logo{
+    margin-top: 100px;
+}
+h1{
+    text-align: center;
+    color: #333333;
+    font-size: 50px;
+}
+#productList{
+    margin-top: 80px;
+}
+.product{
+    height: 350px;
+    margin-top:100px;
+    cursor: pointer;
+}
+.product .top{
+    height: 80px;
+    background-color: #ff5a00;
+}
+.product .productImage>img{
+    height: 200px;
+    object-fit: cover;
+}
+.choose{
+    height: 80px;
+}
+.choose img{
+    width: 100%;
+    max-height: 60px;
+    object-fit: contain;
+    cursor: pointer;
+}
+.rank{
+    height: 80px;
+}
+.rank img{
+    max-height: 70px;
+    object-fit: contain;
+}
+.product .info{
+    width: 100%;
+    height: 70px;
+    background-color: #f4f4f4;
+    
+}
+.info p{
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+    width: 80%;
+    margin-left: 10%;
+    max-height: 30px;
+    overflow: hidden;
+}
+.choose.row, .top.row, .rank.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.choose img:hover{
+    border: 3px solid #ff5a00;
+}
+.rank p{
+    font-size: 25px;
+    line-height: 30px;
+    color: white;
+    text-align: right;
+}
+
+footer{
+    height:100px;
+    width: 100%;
+    margin-top: 100px;
+    background-color: #ff5a00;
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+a:hover{
+    text-decoration: none;
+    color:inherit;
+}
