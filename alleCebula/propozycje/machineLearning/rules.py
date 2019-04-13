@@ -23,7 +23,7 @@ def compute_rules(transactions):
     return results
 
 def add_new_data(new_data):
-    with open('shopping-data.csv', 'a', newline='') as csvFile:
+    with open('propozycje/machineLearning/shopping-data.csv', 'a', newline='') as csvFile:
         writer = csv.writer(csvFile)
         writer.writerows(new_data)
         
