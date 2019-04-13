@@ -11,7 +11,7 @@
 
 {% block content%}
 
-    <div id="singleProduct" class="product col-10 offset-1 row" itemid="{{product.id}}">
+    <div id="singleProduct" class="product col-10 offset-1 row" itemid="{{product.id}}" category="{{product.category_id}}">
         <div class="singleProductImage col-md-6">
             <img src="{{product.picture}}">
         </div>
@@ -21,7 +21,7 @@
                 {{product.name}}
             </h2>
             <div class="details">
-                <p>{{product.price}}</p>
+                <p id="pp">{{product.price}}</p>
             </div>
             <div class="onionRank row">
                 <div class="choose col-6 row align-items-center p-1">
@@ -119,5 +119,17 @@
             </form>
         </div>
     </div>
+
+
+    <script>
+        $(document).ready(function(){
+            var category = $('#singleProduct').attr('category');
+            var price = parseInt(parseFloat($('#pp').html().replace(',','.').replace(' ','')));
+
+            $.get('/propozycje/process/single/'+category+'/'+ (price*3) + '/', function(data){
+                $('#productList').html(data);
+            })
+        })
+    </script>
 
 {% endblock %}
