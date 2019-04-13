@@ -5,6 +5,7 @@ from propozycje.machineLearning.item_generator import categories_dict
 from alleCebula.itemyZosi import bundle_to_array, shuffle_bundles, shuffle_bundles_one, get_total_price, price_ok
 from django.http import HttpResponse
 from django.template import loader
+import numpy as np
 
 def propositions(request):
     template = loader.get_template('propozycje/zero/index.html')
@@ -70,10 +71,9 @@ def compute(price, category, flag):
                                     another_bundle_sample.append(another_item)
                                     bundles.append(another_bundle_sample)
 
-                                    #if(len(bundles) > 1000):
-                                    #    return bundles
     if flag:
-        return [bundles[0]]
+        n = np.random.randint(0, len(bundles)-1)
+        return [bundles[n]]
     else:
         return bundles
 
@@ -114,17 +114,11 @@ def process_one(request, price, category):
     bundles_sample = []
     bundles = []
 
-    print('before sample')
     bundles_sample = compute(price, category, True)
-
-    print(bundles_sample)
 
     template = loader.get_template('propozycje/zero/singleList.html')
 
-    bundles_shuffled = []
-    bundles_shuffled = shuffle_bundles_one(bundles_sample)
-
-    for bundle in bundles_shuffled:
+    for bundle in bundles_sample:
         products = bundle_to_array(bundle)
         bundles.append(products)
 
