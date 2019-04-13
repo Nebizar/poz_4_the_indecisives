@@ -64,6 +64,7 @@ def compute(price, category):
     return bundles
 
 def process(request, price, category):
+    category = category.replace("_", " ")
     bundles_sample = []
     bundles = []
 
@@ -85,6 +86,7 @@ def process(request, price, category):
     return HttpResponse(template.render(context, request))
 
 def process_one(request, price, category):
+    category = category.replace("_", " ")
     bundles_sample = []
     bundles = []
 
