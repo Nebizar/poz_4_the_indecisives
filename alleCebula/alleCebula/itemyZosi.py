@@ -1,49 +1,28 @@
 import random
 
-from alleCebula.productgetter import get_products_from_category
-from propozycje.machineLearning.item_generator import categories_dict
 
 def price_ok(bundle, new_item, max_price):
     result = True
-    total_price=float(new_item["sellingMode"]["price"]["amount"])
+    total_price = float(new_item["sellingMode"]["price"]["amount"])
     for item in bundle:
-        total_price+=float(item["sellingMode"]["price"]["amount"])
+        total_price += float(item["sellingMode"]["price"]["amount"])
         if total_price > max_price:
-            result=False
+            result = False
             break
     return result
 
-def get_total_price(bundle):
-    price=0.0
-    #for item in bundle:
-    #    price+=float(item["sellingMode"]["price"]["amount"])
-    return price
-
-
-def get_bundles(bundle_base, category, max_price, num_products):
-    bundles=[]
-    cat_id = categories_dict[category]
-    other_items = get_products_from_category(cat_id, max_price=max_price, num_products=num_products)
-    for other_item in other_items:
-        bundle_sample = bundle_base[:]
-        if other_item["sellingMode"]["format"] == "BUY_NOW":
-            if get_total_price(bundle_sample)+ float(other_item["sellingMode"]["price"]["amount"]) <= max_price:
-                bundle_sample.append(other_item)
-                bundles.append(bundle_sample)
-    return bundles
-
 
 def bundle_to_array(bundle):
-    id=''
-    products=[]
+    id = ''
+    products = []
     for item in bundle:
-        id+=item["category"]["id"]
-        id+="a"
-        if(len(item["images"])>0):
+        id += item["category"]["id"]
+        id += "a"
+        if len(item["images"]) > 0:
             products.append({
-                'name':item["name"],
+                'name': item["name"],
                 'price': item["sellingMode"]["price"]["amount"],
-                'image':item["images"][0]["url"]
+                'image': item["images"][0]["url"]
             })
         else:
             products.append({
@@ -62,33 +41,7 @@ def shuffle_bundles(bundles):
     random.shuffle(bundles)
     return bundles[:10]
 
+
 def shuffle_bundles_one(bundles):
     random.shuffle(bundles)
     return [bundles[0]]
-
-
-
-def xd(items, associated_categories, items_per_category, max_price):
-    bundles=[]
-    for item in items:
-        if item["sellingMode"]["format"]=="BUY_NOW":
-            bundles.append([item])
-            other_price = max_price - float(item["sellingMode"]["price"]["amount"])
-            for category in associated_categories:
-                temp_bundles=[]
-                for bundle in bundles:
-                    while len(temp_bundles)<3:
-                        b=get_bundles(bundle, category, other_price, items_per_category)
-                        temp_bundles.append(b)
-                bundles.append(temp_bundles)
-                print(bundles)
-    return bundles
-
-
-
-
-
-
-
-
-
