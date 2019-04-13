@@ -2,7 +2,7 @@ from django.shortcuts import render
 from propozycje.machineLearning.rules import create_rules, get_associated_categories, add_new_data
 from alleCebula.productgetter import get_products_from_category, get_products_from_seller
 from propozycje.machineLearning.item_generator import categories_dict
-from alleCebula.itemyZosi import bundle_to_array, shuffle_bundles, shuffle_bundles_one
+from alleCebula.itemyZosi import bundle_to_array, shuffle_bundles, shuffle_bundles_one, get_total_price
 from django.http import HttpResponse
 from django.template import loader
 
@@ -33,11 +33,42 @@ def compute(price, category):
     bundles_sample = []
     products = []
     bundles = []
+    category_items=[]
 
     #bundles_sample = xd(items, associated_categories, items_per_category, base_price)
 
+    for category in associated_categories:
+        cat_id = categories_dict[category]
+        c_items= get_products_from_category(cat_id, max_price=max_price, num_products=items_per_category)
+        category_items.append(c_items)
+
+
 
     for item in items:
+        if item["sellingMode"]["format"] == "BUY_NOW":
+            for category in category_items:
+                other_items=category
+                j = 0
+                for other_item in other_items:
+                    bundle_sample = []
+                    bundle_sample.append(item)
+                    j += 1
+                    if j > 3:
+                        break
+                    if other_item["sellingMode"]["format"] == "BUY_NOW":
+                        bundle_sample.append(other_item)
+                        for new_category in category_items:
+                            another_items = new_category
+                            i = 0
+                            for another_item in another_items:
+                                i += 1
+                                if i > 3:
+                                    break
+                                another_bundle_sample = [item, other_item]
+                                if another_item["sellingMode"]["format"] == "BUY_NOW":
+                                    another_bundle_sample.append(another_item)
+
+    """for item in items:
         seller_id=item["seller"]["id"]
 
         if item["sellingMode"]["format"]=="BUY_NOW":
@@ -68,9 +99,7 @@ def compute(price, category):
                                     break
                                 another_bundle_sample=[item, other_item]
                                 if another_item["sellingMode"]["format"] == "BUY_NOW":
-                                    another_bundle_sample.append(another_item)
-                                    bundles_sample.append(another_bundle_sample)
-
+                                    another_bundle_sample.append(another_item)"""
     return bundles_sample
 
 def process(request, price, category):
