@@ -10,30 +10,16 @@ def get_total_price(bundle):
     return price
 
 
-def get_bundles(bundles, category, max_price, num_products):
+def get_bundles(bundle_base, category, max_price, num_products):
     bundles=[]
     cat_id = categories_dict[category]
-    other_items = get_products_from_category(cat_id, max_price=other_price, num_products=items_per_category)
-
+    other_items = get_products_from_category(cat_id, max_price=other_price, num_products=um_products)
     for other_item in other_items:
-        bundle_sample = []
-        bundle_sample.append(item)
+        bundle_sample = bundle_base[:]
         if other_item["sellingMode"]["format"] == "BUY_NOW":
-            bundle_sample.append(other_item)
-            new_price = other_price - float(other_item["sellingMode"]["price"]["amount"])
-            bundles.append(bundle_sample)
-            products = bundle_to_array(bundle_sample)
-
-
-def process_xd(items, categories, max_price, num_products):
-    bundles = []
-    for item in items:
-        if item["sellingMode"]["format"] == "BUY_NOW":
-            #seller_id=item["seller"]["id"]
-            bundles.append([item])
-            for category in categories:
-                cat_id = categories_dict[category]
-                bundles=get_bundles(bundles, category, max_price, num_products)
+            if get_total_price(bundle_sample)+ float(other_item["sellingMode"]["price"]["amount"]) <= max_price:
+                bundle_sample.append(other_item)
+                bundles.append(bundle_sample)
     return bundles
 
 
@@ -65,6 +51,70 @@ def bundle_to_array(bundle):
 def shuffle_bundles(bundles):
     random.shuffle(bundles)
     return bundles[:10]
+
+
+
+def xd(items, associated_categories, items_per_category, max_price):
+    bundles=[]
+    for item in items:
+        if item["sellingMode"]["format"]=="BUY_NOW":
+            bundles.append([item])
+            other_price = max_price - item["sellingMode"]["price"]["amount"]
+            for category in associated_categories:
+                temp_bundles=[]
+                for bundle in bundles:
+                    b=get_bundles(bundle, category, other_price, items_per_category)
+                    temp_bundles.append(b)
+                bundles.append(temp_bundles)
+    return bundles
+
+
+
+
+    template = loader.get_template('propozycje/zero/productList.html')
+
+    bundles_shuffled = []
+    bundles_shuffled = shuffle_bundles(bundles_sample)
+
+    for bundle in bundles_shuffled:
+        products = bundle_to_array(bundle)
+        bundles.append(products)
+
+
+    """
+    products = [
+            {
+                'name': 'opona',
+                'price': '125 zł',
+                'image': 'https://a.allegroimg.com/s1024/01100e/9c869ebe48129822b1605ecd4605'
+            },
+            {
+                'name': 'opona',
+                'price': '125 zł',
+                'image': 'https://a.allegroimg.com/s1024/01100e/9c869ebe48129822b1605ecd4605'
+            },
+            {
+                'name': 'opona',
+                'price': '125 zł',
+                'image': 'https://a.allegroimg.com/s1024/01100e/9c869ebe48129822b1605ecd4605'
+            }
+    ]
+    """
+    """
+    bundle = {
+        'id': 'abc',
+        'products': products
+    }
+
+    bundles = []
+    bundles.append(bundle)
+    """
+    context = {
+        'bundles': bundles
+    }
+
+    return HttpResponse(template.render(context, request))
+
 
 
 
