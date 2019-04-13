@@ -34,8 +34,11 @@ def process_xd(items, categories, max_price, num_products):
 
 
 def bundle_to_array(bundle):
+    id=''
     products=[]
     for item in bundle:
+        id.append(item["category"]["id"])
+        id.append("a")
         if(len(item["images"])>0):
             products.append({
                 'name':item["name"],
@@ -48,5 +51,9 @@ def bundle_to_array(bundle):
                 'price': item["sellingMode"]["price"]["amount"],
                 'image': 'https://a.allegroimg.com/s1024/01100e/9c869ebe48129822b1605ecd4605'
             })
+    bundle = {
+        'id': id[:-1],
+        'products': products
+    }
     return products
 
