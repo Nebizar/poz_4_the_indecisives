@@ -78,11 +78,7 @@ def compute(price, category, flag):
         return bundles
 
 def process(request, price, category):
-    for key, value in categories_dict.items():
-        if value == category:
-            category = key
-            break
-    category = category.replace("_", " ")
+    category = category.replace("\%20", " ")
     bundles_sample = []
     bundles = []
 
