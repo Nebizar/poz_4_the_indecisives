@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 from deals.models import Item
 from deals.models import Comment
+from alleCebula.alleCebula.authorization import post_to_page
 
 def deals(request):
     template = loader.get_template('deals/index.html')
@@ -67,4 +68,8 @@ def sub(request, id):
     product.cebulions -= 1
     product.save()
     #
+    return HttpResponse('')
+
+def post_to_facebook(request, url, msg):
+    status = post_to_page(msg+' '+url)
     return HttpResponse('')
